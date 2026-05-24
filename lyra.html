@@ -7,257 +7,138 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/academicons-1.9.1/css/academicons.css"/>
   <link rel="icon" type="image/png" href="images/Aurora_Lick_copy.png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* ── Page-level overrides ────────────────────────────────── */
-    :root {
-      --accent: #c0563e;
-      --accent-light: #f2e4df;
-      --ink: #1a1613;
-      --muted: #6b6260;
-      --rule: #d8cfc9;
-      --bg-card: #faf8f6;
-      --font-serif: 'Crimson Pro', Georgia, serif;
-      --font-sans: 'DM Sans', system-ui, sans-serif;
-    }
-
-    /* override template body font where we control content */
-    #research-page { font-family: var(--font-sans); color: var(--ink); }
-
-    /* ── Hero / AAS photo ───────────────────────────────────── */
+    /* Only structural layout — no font/color overrides */
     .hero-photo-section {
       text-align: center;
-      padding: 3rem 0 2rem;
-      border-bottom: 1px solid var(--rule);
-      margin-bottom: 3rem;
-    }
-    .hero-photo-wrap {
-      display: inline-block;
-      position: relative;
+      padding: 2em 0 2em;
+      border-bottom: 1px solid rgba(212, 208, 200, 0.5);
+      margin-bottom: 2em;
     }
     .hero-photo-wrap img,
     .hero-photo-placeholder {
-      width: 260px;
-      height: 320px;
+      width: 240px;
+      height: 300px;
       object-fit: cover;
-      border-radius: 4px;
-      display: block;
-      margin: 0 auto;
+      display: inline-block;
+      vertical-align: middle;
     }
     .hero-photo-placeholder {
-      background: var(--accent-light);
-      border: 2px dashed var(--accent);
-      display: flex;
+      border: 2px dashed rgba(144,144,144,0.4);
+      display: inline-flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      color: var(--accent);
-      font-family: var(--font-sans);
-      font-size: 13px;
-      letter-spacing: 0.04em;
-    }
-    .hero-photo-placeholder svg {
-      opacity: 0.5;
+      gap: 6px;
+      font-size: 0.75em;
+      opacity: 0.6;
     }
     .hero-caption {
-      margin-top: 0.75rem;
-      font-family: var(--font-sans);
-      font-size: 13px;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    /* ── Section layout ─────────────────────────────────────── */
-    .research-section {
-      margin-bottom: 4rem;
-      padding-bottom: 4rem;
-      border-bottom: 1px solid var(--rule);
-    }
-    .research-section:last-of-type {
-      border-bottom: none;
+      margin-top: 0.6em;
+      font-size: 0.75em;
+      opacity: 0.6;
     }
 
     .section-label {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.12em;
+      font-size: 0.65em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.4rem;
-    }
-    .section-title {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 400;
-      line-height: 1.2;
-      color: var(--ink);
-      margin: 0 0 0.25rem;
-    }
-    .section-subtitle {
-      font-family: var(--font-sans);
-      font-size: 13.5px;
-      color: var(--muted);
-      margin-bottom: 1.5rem;
-    }
-    .section-body {
-      font-family: var(--font-serif);
-      font-size: 1.15rem;
-      line-height: 1.75;
-      color: #2e2623;
-      max-width: 74ch;
-    }
-    .section-body p { margin-bottom: 1rem; }
-    .section-body a { color: var(--accent); text-decoration: none; border-bottom: 1px solid var(--accent-light); }
-    .section-body a:hover { border-bottom-color: var(--accent); }
-
-    /* ── Pull quote / key finding ───────────────────────────── */
-    .key-finding {
-      border-left: 3px solid var(--accent);
-      padding: 0.9rem 1.4rem;
-      margin: 1.8rem 0;
-      background: var(--accent-light);
-      border-radius: 0 4px 4px 0;
-    }
-    .key-finding p {
-      font-family: var(--font-serif);
-      font-size: 1.08rem;
-      font-style: italic;
-      color: var(--ink);
-      margin: 0;
-    }
-    .key-finding cite {
+      opacity: 0.5;
+      margin-bottom: 0.3em;
       display: block;
-      font-style: normal;
-      font-family: var(--font-sans);
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 0.4rem;
     }
 
-    /* ── Results grid (stat pills) ───────────────────────────── */
     .findings-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      margin: 1.8rem 0;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 1em;
+      margin: 1.5em 0;
     }
     .finding-pill {
-      background: var(--bg-card);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 1rem 1.2rem;
+      border: 1px solid rgba(144,144,144,0.25);
+      border-radius: 4px;
+      padding: 1em 1.2em;
     }
     .finding-pill .stat {
-      font-family: var(--font-serif);
-      font-size: 1.9rem;
+      font-size: 1.8em;
       font-weight: 600;
-      color: var(--accent);
-      line-height: 1;
       display: block;
+      line-height: 1;
     }
     .finding-pill .stat-label {
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      color: var(--muted);
+      font-size: 0.75em;
+      opacity: 0.65;
       margin-top: 4px;
       line-height: 1.4;
     }
 
-    /* ── Image block ────────────────────────────────────────── */
-    .img-block {
-      margin: 2rem 0;
+    .key-finding {
+      border-left: 3px solid rgba(144,144,144,0.4);
+      padding: 0.8em 1.4em;
+      margin: 1.5em 0;
     }
+    .key-finding p { margin: 0; font-style: italic; }
+    .key-finding cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.75em;
+      opacity: 0.6;
+      margin-top: 0.4em;
+    }
+
+    .img-block { margin: 1.5em 0; }
     .img-block img,
     .img-placeholder {
-      width: 100%;
-      max-width: 640px;
+      max-width: 100%;
+      width: 620px;
       aspect-ratio: 16/9;
-      object-fit: cover;
-      border-radius: 4px;
       display: block;
     }
     .img-placeholder {
-      background: var(--accent-light);
-      border: 2px dashed var(--rule);
+      border: 2px dashed rgba(144,144,144,0.3);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-direction: column;
       gap: 6px;
-      color: var(--muted);
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      text-align: center;
+      font-size: 0.75em;
+      opacity: 0.55;
     }
     .img-placeholder.tall { aspect-ratio: 4/3; }
     .img-caption {
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      color: var(--muted);
-      margin-top: 0.5rem;
-      max-width: 640px;
+      font-size: 0.75em;
+      opacity: 0.65;
+      margin-top: 0.5em;
+      max-width: 620px;
       line-height: 1.5;
     }
 
-    /* ── Links / badges ─────────────────────────────────────── */
-    .paper-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--ink);
-      color: #fff !important;
-      font-family: var(--font-sans);
-      font-size: 12.5px;
-      font-weight: 500;
-      letter-spacing: 0.04em;
-      padding: 7px 14px;
-      border-radius: 3px;
-      text-decoration: none !important;
-      border: none !important;
-      margin-right: 8px;
-      margin-top: 1rem;
-      transition: background 0.15s;
-    }
-    .paper-link:hover { background: #3a302c !important; }
-    .paper-link.outline {
-      background: transparent;
-      color: var(--ink) !important;
-      border: 1px solid var(--rule) !important;
-    }
-    .paper-link.outline:hover { background: var(--bg-card) !important; }
+    .paper-links { margin-top: 1.2em; }
+    .paper-links a { margin-right: 0.8em; }
 
-    /* ── Mentors row ─────────────────────────────────────────── */
-    .mentors-section {
-      margin-top: 2.5rem;
-    }
+    .mentors-section { margin-top: 2em; }
     .mentors-label {
-      font-family: var(--font-sans);
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
+      font-size: 0.65em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1rem;
+      opacity: 0.5;
+      margin-bottom: 0.8em;
+      display: block;
     }
     .mentors-row {
       display: flex;
       flex-wrap: wrap;
-      gap: 16px;
+      gap: 1em;
     }
     .mentor-card {
       display: flex;
       align-items: center;
-      gap: 12px;
-      background: var(--bg-card);
-      border: 1px solid var(--rule);
-      border-radius: 6px;
-      padding: 10px 16px;
+      gap: 0.8em;
+      border: 1px solid rgba(144,144,144,0.25);
+      border-radius: 4px;
+      padding: 0.7em 1em;
     }
     .mentor-avatar img,
     .mentor-avatar-placeholder {
@@ -268,55 +149,23 @@
       display: block;
     }
     .mentor-avatar-placeholder {
-      background: var(--accent-light);
-      border: 1.5px dashed var(--accent);
+      border: 1.5px dashed rgba(144,144,144,0.4);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-family: var(--font-sans);
-      font-size: 16px;
-      font-weight: 500;
-      color: var(--accent);
+      font-size: 0.9em;
+      font-weight: 600;
+      opacity: 0.5;
     }
-    .mentor-info .mentor-name {
-      font-family: var(--font-sans);
-      font-size: 14px;
-      font-weight: 500;
-      color: var(--ink);
-    }
-    .mentor-info .mentor-role {
-      font-family: var(--font-sans);
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 2px;
-    }
-
-    /* ── Page title strip ───────────────────────────────────── */
-    .page-title-strip {
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 1rem;
-      margin-bottom: 3rem;
-    }
-    .page-title-strip h1 {
-      font-family: var(--font-serif);
-      font-size: 2.6rem;
-      font-weight: 300;
-      letter-spacing: -0.01em;
-      margin: 0;
-    }
-    .page-title-strip p {
-      font-family: var(--font-sans);
-      font-size: 14px;
-      color: var(--muted);
-      margin: 0.3rem 0 0;
-    }
+    .mentor-name { font-weight: 600; font-size: 0.9em; }
+    .mentor-role { font-size: 0.78em; opacity: 0.65; margin-top: 2px; }
   </style>
 </head>
 
 <body class="is-preload">
 <div id="wrapper">
 
-  <!-- Header (match existing site) -->
+  <!-- Header -->
   <header id="header">
     <div class="inner">
       <a href="index.html" class="logo fix">
@@ -347,340 +196,236 @@
 
   <!-- Main -->
   <div id="main">
-    <div class="inner" id="research-page">
+    <div class="inner">
 
-      <!-- Page title -->
-      <div class="page-title-strip">
-        <h1>Research</h1>
-        <p>Astrophysics · University of California, Santa Cruz</p>
-      </div>
+      <h1>Research</h1>
 
-      <!-- ── AAS press conference photo ──────────────────────── -->
+      <!-- AAS press conference photo -->
       <div class="hero-photo-section">
-        <div class="hero-photo-wrap">
-          <!-- Replace src with your AAS press conference photo -->
-          <!-- <img src="images/aas_press_conference.jpg" alt="Arian Moghni at the AAS press conference"> -->
-          <div class="hero-photo-placeholder">
-            <svg width="36" height="36" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
-              <rect x="3" y="5" width="18" height="14" rx="2"/>
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M7 5V3M17 5V3"/>
-            </svg>
-            <span>AAS Press Conference Photo</span>
-            <span style="font-size:11px;opacity:0.7;">Replace with your image</span>
-          </div>
+        <!-- Replace the placeholder div below with:
+             <img src="images/aas_press_conference.jpg" alt="Arian Moghni at the AAS press conference"> -->
+        <div class="hero-photo-placeholder">
+          <svg width="32" height="32" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <rect x="3" y="5" width="18" height="14" rx="2"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <span>AAS Press Conference Photo</span>
+          <span style="font-size:0.9em">Replace with: images/aas_press_conference.jpg</span>
         </div>
-        <p class="hero-caption">AAS Press Conference · January 2026</p>
+        <p class="hero-caption">AAS Press Conference &middot; January 2026</p>
       </div>
 
-      <!-- ════════════════════════════════════════════════════════
-           SECTION 1 — Red Geyser Galaxies
-           ════════════════════════════════════════════════════════ -->
-      <div class="research-section">
 
-        <p class="section-label">Current Research · 2024 – present</p>
-        <h2 class="section-title">Galactic Rain: Cool Gas Inflows in Red Geyser Galaxies</h2>
-        <p class="section-subtitle">
-          MaNGA · Na I D Spectroscopy · AGN Feedback · Galaxy Quenching
-        </p>
+      <!-- ════════════════════════════════════
+           Red Geyser Galaxies
+           ════════════════════════════════════ -->
+      <hr />
+      <span class="section-label">Current Research &middot; 2024 &ndash; present</span>
+      <h3>Galactic Rain: Cool Gas Inflows in Red Geyser Galaxies</h3>
+      <p><em>MaNGA &middot; Na&thinsp;I&thinsp;D Spectroscopy &middot; AGN Feedback &middot; Galaxy Quenching</em></p>
 
-        <!-- Key stat pills -->
-        <div class="findings-grid">
-          <div class="finding-pill">
-            <span class="stat">140</span>
-            <span class="stat-label">Red geyser galaxies from SDSS-IV MaNGA</span>
-          </div>
-          <div class="finding-pill">
-            <span class="stat">~70%</span>
-            <span class="stat-label">Of cool neutral gas is <em>inflowing</em>, not outflowing</span>
-          </div>
-          <div class="finding-pill">
-            <span class="stat">7×</span>
-            <span class="stat-label">Larger inflow reservoirs in radio-detected systems</span>
-          </div>
-          <div class="finding-pill">
-            <span class="stat">2.7×</span>
-            <span class="stat-label">Larger reservoirs in interacting vs. isolated red geysers</span>
-          </div>
+      <div class="findings-grid">
+        <div class="finding-pill">
+          <span class="stat">140</span>
+          <span class="stat-label">Red geyser galaxies from SDSS-IV MaNGA</span>
         </div>
-
-        <div class="section-body">
-          <p>
-            One of the central puzzles in modern astronomy is understanding why some galaxies stop
-            forming stars and, crucially, how they <em>stay</em> quiet for billions of years — even
-            when they still contain gas that could, in principle, fuel new stars.
-            <strong>Red geysers</strong> are a rare class of massive quiescent galaxies
-            (log[M/M<sub>☉</sub>] ≈ 10.5) that exhibit large-scale but weak, bi-symmetric
-            ionized gas outflows. These are interpreted as signatures of ongoing, low-level
-            active galactic nucleus (AGN) feedback — but what fuels the AGN in the first place?
-          </p>
-          <p>
-            In this study, I used spatially-resolved spectra from the Sloan Digital Sky Survey-IV
-            <a href="https://www.sdss.org/surveys/manga/" target="_blank">Mapping Nearby Galaxies at APO (MaNGA)</a>
-            survey to map the kinematics of cool (T ~ 100–1000 K) neutral gas traced by the
-            Na I D absorption doublet across 140 red geyser galaxies. By fitting double-Gaussian
-            profiles to the doublet, I measured spatially resolved velocities and velocity
-            dispersions — revealing whether the gas is flowing in or out.
-          </p>
-
-          <div class="key-finding">
-            <p>"These galaxy-scale winds are thought to be signatures of supermassive black hole
-            activity in the center. The puzzle is how these black holes get their fuel."</p>
-            <cite>— Arian Moghni, UCSC press release, January 2026</cite>
-          </div>
-
-          <p>
-            Contrary to the outflowing picture commonly seen in star-forming galaxies, roughly
-            70% of the cool gas in red geysers shows signatures of <em>inflow</em>, with a
-            median velocity of ~47 km/s — about 10% of the expected free-fall speed. This slow,
-            organized infall points to a continuous drizzle of cool clouds raining down toward
-            the galactic center, where they can feed the supermassive black hole.
-          </p>
-          <p>
-            A particularly striking result involves the role of the galaxy environment.
-            Red geysers that show evidence of interactions with nearby companions, or
-            signatures of past minor mergers, host inflowing gas reservoirs roughly 2.7 times
-            larger than isolated systems. Meanwhile, the ~30% of red geysers detected in radio —
-            a sign of active central black holes — have inflow reservoirs nearly 7 times larger
-            than their radio-quiet counterparts.
-          </p>
-          <p>
-            Together, these findings support a self-regulating cycle: galaxy interactions deliver
-            fresh cool gas, which rains inward and feeds the AGN; the AGN heats and stirs the
-            surrounding gas; star formation remains suppressed; and the galaxy stays "red and dead."
-            Rather than a one-time shutoff, quiescence appears to be an active, continuously
-            maintained state.
-          </p>
+        <div class="finding-pill">
+          <span class="stat">~70%</span>
+          <span class="stat-label">Of cool neutral gas is <em>inflowing</em>, not outflowing</span>
         </div>
-
-        <!-- Figure placeholder -->
-        <div class="img-block">
-          <!-- Replace with your figure, e.g. the inflow cycle schematic from the paper -->
-          <!-- <img src="images/red_geyser_cycle.png" alt="Inflow cycle diagram for red geyser galaxies"> -->
-          <div class="img-placeholder">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            <span>Figure: inflow cycle schematic / NaD velocity map</span>
-            <span style="font-size:11px">(e.g. images/red_geyser_cycle.png)</span>
-          </div>
-          <p class="img-caption">
-            <strong>Proposed feedback cycle.</strong> Galaxy interactions supply cool gas clouds (panels 1–2).
-            The gas drifts inward and fuels the central AGN (panel 3). Black hole feedback heats
-            surrounding gas (panel 4), suppressing star formation and sustaining the quiescent
-            state over billions of years (panel 5).
-          </p>
+        <div class="finding-pill">
+          <span class="stat">7&times;</span>
+          <span class="stat-label">Larger inflow reservoirs in radio-detected systems</span>
         </div>
-
-        <!-- Second figure placeholder -->
-        <div class="img-block">
-          <div class="img-placeholder tall">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            <span>Figure: NaD velocity map / inflow area comparison</span>
-            <span style="font-size:11px">(e.g. images/naDmap.png)</span>
-          </div>
-          <p class="img-caption">
-            Spatially resolved Na I D velocity maps for a representative red geyser showing
-            coherent inflow (redshifted absorption) across the galaxy disk.
-          </p>
+        <div class="finding-pill">
+          <span class="stat">2.7&times;</span>
+          <span class="stat-label">Larger reservoirs in interacting vs. isolated red geysers</span>
         </div>
+      </div>
 
-        <div>
-          <a href="https://arxiv.org/abs/2604.13195" target="_blank" class="paper-link">
-            arXiv:2604.13195 ↗
-          </a>
-          <a href="https://news.ucsc.edu/2026/01/red-geyser-galaxies/" target="_blank" class="paper-link outline">
-            UCSC Press Release ↗
-          </a>
+      <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, crucially, how they <em>stay</em> quiet for billions of years — even when they still contain gas that could, in principle, fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) that exhibit large-scale but weak, bi-symmetric ionized gas outflows — interpreted as signatures of ongoing, low-level active galactic nucleus (AGN) feedback. But what fuels the AGN in the first place?</p>
+
+      <p>In this study, I used spatially-resolved spectra from the Sloan Digital Sky Survey-IV <a href="https://www.sdss.org/surveys/manga/" target="_blank">Mapping Nearby Galaxies at APO (MaNGA)</a> survey to map the kinematics of cool (T &sim; 100&ndash;1000 K) neutral gas traced by the Na&thinsp;I&thinsp;D absorption doublet across 140 red geyser galaxies. By fitting double-Gaussian profiles to the doublet, I measured spatially resolved velocities and velocity dispersions — revealing whether the gas is flowing in or out.</p>
+
+      <div class="key-finding">
+        <p>"These galaxy-scale winds are thought to be signatures of supermassive black hole activity in the center. The puzzle is how these black holes get their fuel."</p>
+        <cite>&mdash; Arian Moghni, UCSC press release, January 2026</cite>
+      </div>
+
+      <p>Contrary to the outflowing picture commonly seen in star-forming galaxies, roughly 70% of the cool gas in red geysers shows signatures of <em>inflow</em>, with a median velocity of ~47 km/s — about 10% of the expected free-fall speed. This slow, organized infall points to a continuous drizzle of cool clouds raining down toward the galactic center, where they can feed the supermassive black hole.</p>
+
+      <p>A particularly striking result involves the role of the galaxy environment. Red geysers that show evidence of interactions with nearby companions, or signatures of past minor mergers, host inflowing gas reservoirs roughly 2.7 times larger than isolated systems. Meanwhile, the ~30% of red geysers detected in radio — a sign of active central black holes — have inflow reservoirs nearly 7 times larger than their radio-quiet counterparts.</p>
+
+      <p>Together, these findings support a self-regulating cycle: galaxy interactions deliver fresh cool gas, which rains inward and feeds the AGN; the AGN heats and stirs the surrounding gas; star formation remains suppressed; and the galaxy stays "red and dead." Rather than a one-time shutoff, quiescence appears to be an active, continuously maintained state.</p>
+
+      <!-- Figure 1 -->
+      <div class="img-block">
+        <!-- <img src="images/red_geyser_cycle.png" alt="Inflow cycle schematic for red geyser galaxies"> -->
+        <div class="img-placeholder">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span>Figure: inflow cycle schematic</span>
+          <span style="font-size:0.9em">e.g. images/red_geyser_cycle.png</span>
         </div>
+        <p class="img-caption"><strong>Proposed feedback cycle.</strong> Galaxy interactions supply cool gas clouds (panels 1&ndash;2). The gas drifts inward and fuels the central AGN (panel 3). Black hole feedback heats surrounding gas (panel 4), suppressing star formation and sustaining quiescence over billions of years (panel 5).</p>
+      </div>
 
-        <!-- Mentors -->
-        <div class="mentors-section">
-          <p class="mentors-label">Collaborators &amp; Mentors</p>
-          <div class="mentors-row">
+      <!-- Figure 2 -->
+      <div class="img-block">
+        <!-- <img src="images/naDmap.png" alt="NaD velocity map"> -->
+        <div class="img-placeholder tall">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span>Figure: Na I D velocity map</span>
+          <span style="font-size:0.9em">e.g. images/naDmap.png</span>
+        </div>
+        <p class="img-caption">Spatially resolved Na&thinsp;I&thinsp;D velocity maps for a representative red geyser showing coherent inflow (redshifted absorption) across the galaxy disk.</p>
+      </div>
 
-            <div class="mentor-card">
-              <div class="mentor-avatar">
-                <!-- <img src="images/mentor_rubin.jpg" alt="Kate Rubin"> -->
-                <div class="mentor-avatar-placeholder">KR</div>
-              </div>
-              <div class="mentor-info">
-                <div class="mentor-name">Kate H. R. Rubin</div>
-                <div class="mentor-role">San Diego State University</div>
-              </div>
+      <div class="paper-links">
+        <a href="https://arxiv.org/abs/2604.13195" target="_blank">arXiv:2604.13195</a>
+        <a href="https://news.ucsc.edu/2026/01/red-geyser-galaxies/" target="_blank">UCSC Press Release</a>
+      </div>
+
+      <div class="mentors-section">
+        <span class="mentors-label">Collaborators &amp; Mentors</span>
+        <div class="mentors-row">
+
+          <div class="mentor-card">
+            <div class="mentor-avatar">
+              <!-- <img src="images/mentor_rubin.jpg" alt="Kate Rubin"> -->
+              <div class="mentor-avatar-placeholder">KR</div>
             </div>
-
-            <div class="mentor-card">
-              <div class="mentor-avatar">
-                <!-- <img src="images/mentor_bundy.jpg" alt="Kevin Bundy"> -->
-                <div class="mentor-avatar-placeholder">KB</div>
-              </div>
-              <div class="mentor-info">
-                <div class="mentor-name">Kevin Bundy</div>
-                <div class="mentor-role">UC Santa Cruz</div>
-              </div>
+            <div>
+              <div class="mentor-name">Kate H. R. Rubin</div>
+              <div class="mentor-role">San Diego State University</div>
             </div>
+          </div>
 
-            <div class="mentor-card">
-              <div class="mentor-avatar">
-                <!-- <img src="images/mentor_roy.jpg" alt="Namrata Roy"> -->
-                <div class="mentor-avatar-placeholder">NR</div>
-              </div>
-              <div class="mentor-info">
-                <div class="mentor-name">Namrata Roy</div>
-                <div class="mentor-role">Johns Hopkins University</div>
-              </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar">
+              <!-- <img src="images/mentor_bundy.jpg" alt="Kevin Bundy"> -->
+              <div class="mentor-avatar-placeholder">KB</div>
             </div>
-
-          </div>
-        </div>
-      </div><!-- /research-section red geyser -->
-
-
-      <!-- ════════════════════════════════════════════════════════
-           SECTION 2 — Exoplanet Atmospheres
-           ════════════════════════════════════════════════════════ -->
-      <div class="research-section">
-
-        <p class="section-label">Previous Research · Exoplanetary Science</p>
-        <h2 class="section-title">Modeling Exoplanet Atmospheres</h2>
-        <p class="section-subtitle">
-          Atmospheric Escape · Photoionization · Hydrodynamics
-        </p>
-
-        <div class="section-body">
-          <p>
-            Working with Prof. Ruth Murray-Clay at UC Santa Cruz, I investigated the physics
-            of exoplanetary atmospheres — in particular the conditions under which atmospheric
-            escape occurs and how upper-atmospheric structure responds to irradiation from the
-            host star.
-          </p>
-          <p>
-            Close-in exoplanets receive intense high-energy (X-ray and EUV) radiation that can
-            drive hydrodynamic escape of their envelopes, sculpting the observed population of
-            planets. I developed and applied models to characterize these photoionization-driven
-            outflows, examining how atmospheric composition and escape rates depend on stellar
-            flux, planetary gravity, and the properties of the upper atmosphere.
-          </p>
-          <p>
-            This work connects to the broader question of how planet populations evolve:
-            understanding which planets retain their atmospheres over gigayear timescales has
-            direct implications for planetary habitability and the demographics revealed by
-            missions like <em>Kepler</em> and <em>TESS</em>.
-          </p>
-        </div>
-
-        <!-- Figure placeholder -->
-        <div class="img-block">
-          <div class="img-placeholder">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            <span>Figure: atmospheric structure / escape rate model</span>
-            <span style="font-size:11px">(e.g. images/exo_atm.png)</span>
-          </div>
-          <p class="img-caption">
-            Placeholder — add a figure from your atmosphere modeling work here.
-          </p>
-        </div>
-
-        <!-- Mentors -->
-        <div class="mentors-section">
-          <p class="mentors-label">Advisor</p>
-          <div class="mentors-row">
-
-            <div class="mentor-card">
-              <div class="mentor-avatar">
-                <!-- <img src="images/mentor_murrayclay.jpg" alt="Ruth Murray-Clay"> -->
-                <div class="mentor-avatar-placeholder">RM</div>
-              </div>
-              <div class="mentor-info">
-                <div class="mentor-name">Ruth Murray-Clay</div>
-                <div class="mentor-role">UC Santa Cruz · Planetary Astrophysics</div>
-              </div>
+            <div>
+              <div class="mentor-name">Kevin Bundy</div>
+              <div class="mentor-role">UC Santa Cruz</div>
             </div>
-
           </div>
-        </div>
-      </div><!-- /research-section exoplanets -->
 
-
-      <!-- ════════════════════════════════════════════════════════
-           SECTION 3 — RR Lyrae Variable Stars
-           ════════════════════════════════════════════════════════ -->
-      <div class="research-section">
-
-        <p class="section-label">Previous Research · Stellar Astrophysics</p>
-        <h2 class="section-title">RR Lyrae Variable Stars</h2>
-        <p class="section-subtitle">
-          Pulsating Stars · Distance Indicators · Stellar Populations
-        </p>
-
-        <div class="section-body">
-          <p>
-            RR Lyrae stars are ancient, pulsating horizontal-branch stars that serve as
-            some of the most reliable <em>standard candles</em> in the cosmos. Because their
-            periods and luminosities are tightly linked, they allow astronomers to measure
-            distances to globular clusters, dwarf galaxies, and the halo of the Milky Way
-            with high precision.
-          </p>
-          <p>
-            My work in this area focused on [add a brief description of what you did —
-            e.g., photometric characterization of RR Lyrae populations in a specific cluster
-            or field, period–luminosity relations, or light-curve fitting]. Through careful
-            light-curve analysis and period determinations, I [summarize your main findings or
-            techniques].
-          </p>
-          <p>
-            This project gave me hands-on experience with time-series photometry, period
-            analysis techniques (e.g., Lomb–Scargle periodograms), and the use of variable
-            stars as probes of stellar ages and chemical abundances in old stellar populations.
-          </p>
-        </div>
-
-        <!-- Figure placeholder -->
-        <div class="img-block">
-          <div class="img-placeholder">
-            <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
-              <rect x="3" y="3" width="18" height="18" rx="2"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            <span>Figure: RR Lyrae light curve / periodogram</span>
-            <span style="font-size:11px">(e.g. images/rrl_lightcurve.png)</span>
-          </div>
-          <p class="img-caption">
-            Placeholder — add a phased light curve or CMD from your RR Lyrae work here.
-          </p>
-        </div>
-
-        <!-- Mentors placeholder — fill in your actual advisor(s) -->
-        <div class="mentors-section">
-          <p class="mentors-label">Advisor</p>
-          <div class="mentors-row">
-
-            <div class="mentor-card">
-              <div class="mentor-avatar">
-                <!-- <img src="images/mentor_rrl.jpg" alt="Advisor name"> -->
-                <div class="mentor-avatar-placeholder">??</div>
-              </div>
-              <div class="mentor-info">
-                <div class="mentor-name">Advisor Name</div>
-                <div class="mentor-role">Institution · replace with actual advisor</div>
-              </div>
+          <div class="mentor-card">
+            <div class="mentor-avatar">
+              <!-- <img src="images/mentor_roy.jpg" alt="Namrata Roy"> -->
+              <div class="mentor-avatar-placeholder">NR</div>
             </div>
+            <div>
+              <div class="mentor-name">Namrata Roy</div>
+              <div class="mentor-role">Johns Hopkins University</div>
+            </div>
+          </div>
 
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           Exoplanet Atmospheres
+           ════════════════════════════════════ -->
+      <hr />
+      <span class="section-label">Previous Research &middot; Exoplanetary Science</span>
+      <h3>Modeling Exoplanet Atmospheres</h3>
+      <p><em>Atmospheric Escape &middot; Photoionization &middot; Hydrodynamics</em></p>
+
+      <p>Working with Prof. Ruth Murray-Clay at UC Santa Cruz, I investigated the physics of exoplanetary atmospheres — in particular the conditions under which atmospheric escape occurs and how upper-atmospheric structure responds to irradiation from the host star.</p>
+
+      <p>Close-in exoplanets receive intense high-energy (X-ray and EUV) radiation that can drive hydrodynamic escape of their envelopes, sculpting the observed population of planets. I developed and applied models to characterize these photoionization-driven outflows, examining how atmospheric composition and escape rates depend on stellar flux, planetary gravity, and the properties of the upper atmosphere.</p>
+
+      <p>This work connects to the broader question of how planet populations evolve: understanding which planets retain their atmospheres over gigayear timescales has direct implications for planetary habitability and the demographics revealed by missions like <em>Kepler</em> and <em>TESS</em>.</p>
+
+      <!-- Figure placeholder -->
+      <div class="img-block">
+        <!-- <img src="images/exo_atm.png" alt="Atmospheric escape model"> -->
+        <div class="img-placeholder">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span>Figure: atmospheric structure / escape rate model</span>
+          <span style="font-size:0.9em">e.g. images/exo_atm.png</span>
+        </div>
+        <p class="img-caption">Placeholder &mdash; add a figure from your atmosphere modeling work here.</p>
+      </div>
+
+      <div class="mentors-section">
+        <span class="mentors-label">Advisor</span>
+        <div class="mentors-row">
+          <div class="mentor-card">
+            <div class="mentor-avatar">
+              <!-- <img src="images/mentor_murrayclay.jpg" alt="Ruth Murray-Clay"> -->
+              <div class="mentor-avatar-placeholder">RM</div>
+            </div>
+            <div>
+              <div class="mentor-name">Ruth Murray-Clay</div>
+              <div class="mentor-role">UC Santa Cruz &middot; Planetary Astrophysics</div>
+            </div>
           </div>
         </div>
-      </div><!-- /research-section RR Lyrae -->
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           RR Lyrae Variable Stars
+           ════════════════════════════════════ -->
+      <hr />
+      <span class="section-label">Previous Research &middot; Stellar Astrophysics</span>
+      <h3>RR Lyrae Variable Stars</h3>
+      <p><em>Pulsating Stars &middot; Distance Indicators &middot; Stellar Populations</em></p>
+
+      <p>RR Lyrae stars are ancient, pulsating horizontal-branch stars that serve as some of the most reliable <em>standard candles</em> in the cosmos. Because their periods and luminosities are tightly linked, they allow astronomers to measure distances to globular clusters, dwarf galaxies, and the halo of the Milky Way with high precision.</p>
+
+      <p>My work in this area focused on [add a brief description of what you did — e.g., photometric characterization of RR Lyrae populations in a specific cluster or field, period&ndash;luminosity relations, or light-curve fitting]. Through careful light-curve analysis and period determinations, I [summarize your main findings or techniques].</p>
+
+      <p>This project gave me hands-on experience with time-series photometry, period analysis techniques (e.g., Lomb&ndash;Scargle periodograms), and the use of variable stars as probes of stellar ages and chemical abundances in old stellar populations.</p>
+
+      <!-- Figure placeholder -->
+      <div class="img-block">
+        <!-- <img src="images/rrl_lightcurve.png" alt="RR Lyrae light curve"> -->
+        <div class="img-placeholder">
+          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <path d="M21 15l-5-5L5 21"/>
+          </svg>
+          <span>Figure: RR Lyrae light curve / periodogram</span>
+          <span style="font-size:0.9em">e.g. images/rrl_lightcurve.png</span>
+        </div>
+        <p class="img-caption">Placeholder &mdash; add a phased light curve or CMD from your RR Lyrae work here.</p>
+      </div>
+
+      <div class="mentors-section">
+        <span class="mentors-label">Advisor</span>
+        <div class="mentors-row">
+          <div class="mentor-card">
+            <div class="mentor-avatar">
+              <!-- <img src="images/mentor_rrl.jpg" alt="Advisor name"> -->
+              <div class="mentor-avatar-placeholder">??</div>
+            </div>
+            <div>
+              <div class="mentor-name">Advisor Name</div>
+              <div class="mentor-role">Institution &middot; replace with actual advisor</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
 
     </div><!-- /.inner -->
   </div><!-- /#main -->
@@ -714,7 +459,6 @@
 
 </div><!-- /#wrapper -->
 
-<!-- Scripts (match existing site) -->
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
 <script src="assets/js/breakpoints.min.js"></script>
