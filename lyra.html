@@ -10,10 +10,8 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
-    /* ── Accent color ─────────────────────────────────────────── */
     :root { --ac: #dc5700; --ac-bg: rgba(220, 87, 0,0.2); --ac-border: rgba(220, 87, 0,1); }
 
-    /* ── Hero photo ───────────────────────────────────────────── */
     .hero-photo-section {
       text-align: center;
       padding: 2em 0 2em;
@@ -22,14 +20,12 @@
     }
     .hero-caption { margin-top: 0.6em; font-size: 0.75em; opacity: 0.6; }
 
-    /* ── Section label (small caps above h3) ─────────────────── */
     .section-label {
       font-size: 0.65em; letter-spacing: 0.2em;
       text-transform: uppercase; opacity: 0.5;
       margin-bottom: 0.3em; display: block;
     }
 
-    /* ── Keyword tag strip ────────────────────────────────────── */
     .keyword-strip { margin: 0 0 1.2em; }
     .kw {
       display: inline-block;
@@ -44,7 +40,6 @@
       opacity: 0.85;
     }
 
-    /* ── Stat pill grid ───────────────────────────────────────── */
     .findings-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -66,7 +61,6 @@
       margin-top: 4px; line-height: 1.4;
     }
 
-    /* ── Pull quote ───────────────────────────────────────────── */
     .key-finding {
       border-left: 3px solid var(--ac-border);
       padding: 0.9em 1.4em;
@@ -80,30 +74,61 @@
       font-size: 0.75em; opacity: 0.6; margin-top: 0.4em;
     }
 
-    /* ── Image blocks ─────────────────────────────────────────── */
-    .img-block { margin: 1.5em 0; }
-    .img-block img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+    /* ── Figure layouts ───────────────────────────────────────── */
+
+    /* Two figures side by side */
+    .figures-row {
+      display: flex;
+      gap: 1.5em;
+      margin: 1.5em 0;
+      align-items: flex-start;
     }
+    .figures-row .fig {
+      flex: 1;
+      min-width: 0;
+    }
+    .figures-row .fig img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .figures-row .fig .img-caption {
+      font-size: 0.72em; opacity: 0.65;
+      margin-top: 0.5em; line-height: 1.5;
+      max-width: 100%;
+    }
+
+    /* Single figure floated left */
+    .fig-left {
+      float: left;
+      margin: 0.3em 1.8em 1em 0;
+      max-width: 320px;
+    }
+    .fig-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .fig-left .img-caption {
+      font-size: 0.72em; opacity: 0.65;
+      margin-top: 0.4em; line-height: 1.5;
+    }
+    .clearfix::after {
+      content: ""; display: table; clear: both;
+    }
+
+    /* Placeholder styling (for sections without images yet) */
     .img-placeholder {
       border: 2px dashed rgba(144,144,144,0.3);
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 6px;
       font-size: 0.75em; opacity: 0.55;
-    }
-    .img-placeholder.tall { aspect-ratio: 4/3; }
-    .img-caption {
-      font-size: 0.75em; opacity: 0.65;
-      margin-top: 0.5em; max-width: 620px; line-height: 1.5;
+      aspect-ratio: 16/9;
     }
 
-    /* ── Paper links ──────────────────────────────────────────── */
     .paper-links { margin-top: 1.2em; }
     .paper-links a { margin-right: 0.8em; }
 
-    /* ── Mentor cards ─────────────────────────────────────────── */
     .mentors-section { margin-top: 2em; }
     .mentors-label {
       font-size: 0.65em; letter-spacing: 0.2em;
@@ -141,16 +166,18 @@
       text-decoration-color: rgba(220,87,0,0.4);
       text-underline-offset: 2px;
     }
-    .mentor-card:hover .mentor-name {
-      text-decoration-color: var(--ac-border);
-    }
+    .mentor-card:hover .mentor-name { text-decoration-color: var(--ac-border); }
     .mentor-role { font-size: 0.78em; opacity: 0.65; margin-top: 2px; }
 
-    /* ── Section divider accent ───────────────────────────────── */
     hr.accent {
       border: none;
       border-top: 2px solid var(--ac-border);
       margin: 2.5em 0 1.5em;
+    }
+
+    @media (max-width: 640px) {
+      .figures-row { flex-direction: column; }
+      .fig-left { float: none; max-width: 100%; margin: 1em 0; }
     }
   </style>
 </head>
@@ -158,7 +185,6 @@
 <body class="is-preload">
 <div id="wrapper">
 
-  <!-- Header -->
   <header id="header">
     <div class="inner">
       <a href="index.html" class="logo fix">
@@ -175,7 +201,6 @@
     </div>
   </header>
 
-  <!-- Menu -->
   <nav id="menu">
     <h2>Menu</h2>
     <ul>
@@ -187,13 +212,12 @@
     </ul>
   </nav>
 
-  <!-- Main -->
   <div id="main">
     <div class="inner">
 
       <h1>Research</h1>
 
-      <!-- AAS press conference photo -->
+      <!-- AAS press conference photo — centered, full size -->
       <div class="hero-photo-section">
         <img src="images/AAS247_PM_1162 2.jpg"
              alt="Arian Moghni at the AAS press conference"
@@ -250,34 +274,17 @@
 
       <p>Together, these findings support a self-regulating cycle: galaxy interactions deliver fresh cool gas, which rains inward and feeds the AGN; the AGN heats and stirs the surrounding gas; star formation remains suppressed; and the galaxy stays "red and dead." Rather than a one-time shutoff, quiescence appears to be an active, continuously maintained state. This work resulted in two first-author papers (one in preparation) and a Best Undergraduate Research Poster award at the annual APS regional meeting. I was also 1 of 32 researchers — from over 2,900 attendees — invited to present at the 247th AAS Press Conference in January 2026.</p>
 
-
-      
-       <!-- Figure 1 -->
-      <div class="img-block">
-      <img src="images/four_galaxies.png"
-           alt="Schematic of the red geyser feedback cycle"
-           class="figure-image">
-      <p class="img-caption">
-        <strong>Red Geysers Example.</strong> DESI Legacy Survey images (left) and zoomed-in MaNGA Hα equivalent width (EW) maps (right) for four red geyser galaxies (MaNGA IDs: 1-114230, 1-394355, 1-595166, 1-114245). Each Legacy Survey cutout spans∼ 3.5′× 3.5′ and shows the large-scale morphology and environment. From top to bottom, the panels display red geysers classified as: (1) clear interaction, (2) disturbed without a companion, (3) undisturbed with a companion, and (4) isolated. The Hα EW maps (spanning∼ 15′′–30′′) focus on the MaNGA footprint, outlined by the cyan hexagon, and highlight ionized gas and the characteristic bi-symmetric jet-like features that define red geysers.
-      </p>
-    </div>
-
-      <!-- Figure 2 -->
-      <div class="img-block">
-      <img src="images/Red_geyser_summary.png"
-           alt="Schematic of the red geyser feedback cycle"
-           class="figure-image">
-      <p class="img-caption">
-        <strong>Proposed feedback cycle.</strong> Galaxy interactions supply cool gas clouds (panels 1–2). The gas drifts inward and fuels the central AGN (panel 3). Black hole feedback heats surrounding gas (panel 4), suppressing star formation and sustaining quiescence over billions of years (panel 5).
-      </p>
-    </div>
-
-      
-     
-
-     
-
-      
+      <!-- Two figures side by side -->
+      <div class="figures-row">
+        <div class="fig">
+          <img src="images/four_galaxies.png" alt="Red geyser examples">
+          <p class="img-caption"><strong>Red Geysers Example.</strong> DESI Legacy Survey images (left) and zoomed-in MaNGA H&alpha; equivalent width maps (right) for four red geyser galaxies. From top to bottom: clear interaction, disturbed without a companion, undisturbed with a companion, and isolated. The cyan hexagon outlines the MaNGA footprint.</p>
+        </div>
+        <div class="fig">
+          <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
+          <p class="img-caption"><strong>Proposed feedback cycle.</strong> Galaxy interactions supply cool gas clouds (panels 1&ndash;2). The gas drifts inward and fuels the central AGN (panel 3). Black hole feedback heats surrounding gas (panel 4), suppressing star formation and sustaining quiescence over billions of years (panel 5).</p>
+        </div>
+      </div>
 
       <div class="paper-links">
         <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae5f90" target="_blank">The Astrophysical Journal</a>
@@ -289,47 +296,34 @@
       <div class="mentors-section">
         <span class="mentors-label">Collaborators &amp; Mentors</span>
         <div class="mentors-row">
-
           <a href="https://physics-astronomy.jhu.edu/directory/timothy-heckman/" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/Heckman.jpg" alt="Tim Heckman">
-            </div>
+            <div class="mentor-avatar"><img src="images/Heckman.jpg" alt="Tim Heckman"></div>
             <div>
               <div class="mentor-name">Prof. Tim Heckman</div>
               <div class="mentor-role">Johns Hopkins University</div>
             </div>
           </a>
-
           <a href="https://namrataroy.github.io" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/nroy2.jpg" alt="Namrata Roy">
-            </div>
+            <div class="mentor-avatar"><img src="images/nroy2.jpg" alt="Namrata Roy"></div>
             <div>
               <div class="mentor-name">Dr. Namrata Roy</div>
               <div class="mentor-role">Johns Hopkins University &amp; ASU</div>
             </div>
           </a>
-
           <a href="https://www.ucolick.org/~kbundy/" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/bundy-headshot.jpg" alt="Kevin Bundy">
-            </div>
+            <div class="mentor-avatar"><img src="images/bundy-headshot.jpg" alt="Kevin Bundy"></div>
             <div>
               <div class="mentor-name">Prof. Kevin Bundy</div>
               <div class="mentor-role">UC Santa Cruz</div>
             </div>
           </a>
-
           <a href="https://orcid.org/0000-0003-1809-6920" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/kwestfall.jpg" alt="Kyle Westfall">
-            </div>
+            <div class="mentor-avatar"><img src="images/kwestfall.jpg" alt="Kyle Westfall"></div>
             <div>
               <div class="mentor-name">Dr. Kyle Westfall</div>
               <div class="mentor-role">UC Observatories</div>
             </div>
           </a>
-
         </div>
       </div>
 
@@ -356,9 +350,7 @@
         <span class="mentors-label">Primary Mentor</span>
         <div class="mentors-row">
           <a href="https://y-chachan.github.io" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/yayaati_chachan.jpg" alt="Yayaati">
-            </div>
+            <div class="mentor-avatar"><img src="images/yayaati_chachan.jpg" alt="Yayaati Chachan"></div>
             <div>
               <div class="mentor-name">Dr. Yayaati Chachan</div>
               <div class="mentor-role">UC Santa Cruz</div>
@@ -385,41 +377,38 @@
 
       <p>I built a forward model to predict the detectability of this proposed torus as a function of system properties: stellar mass and radius, gas temperature, orbital distance, and ionizing flux. The model simulates the expected observed spectra — including the resulting absorption lines — and returns the probability that a torus would be detectable for any given set of parameters. In practice, the model serves as a targeting tool: it can rank candidate Hot Jupiter systems by the likelihood of a torus detection, focusing future telescope time on the most promising targets and maximizing the chances of a discovery. Findings were presented at the UC Santa Cruz ASTR 9 Research Symposium.</p>
 
-      <!-- Figure placeholder -->
-      <div class="img-block">
-        <div class="img-placeholder">
-          <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <path d="M21 15l-5-5L5 21"/>
-          </svg>
-          <span>Figure: atmospheric structure / torus model</span>
-          <span style="font-size:0.9em">e.g. images/exo_atm.png</span>
+      <!-- Single figure, floated left -->
+      <div class="clearfix">
+        <div class="fig-left">
+          <div class="img-placeholder" style="width:100%; aspect-ratio:4/3;">
+            <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
+              <rect x="3" y="3" width="18" height="18" rx="2"/>
+              <circle cx="8.5" cy="8.5" r="1.5"/>
+              <path d="M21 15l-5-5L5 21"/>
+            </svg>
+            <span>e.g. images/exo_atm.png</span>
+          </div>
+          <p class="img-caption">Placeholder &mdash; add a figure from your torus modeling work here.</p>
         </div>
-        <p class="img-caption">Placeholder &mdash; add a figure from your torus modeling work here.</p>
-      </div>
 
-      <div class="mentors-section">
-        <span class="mentors-label">Advisors</span>
-        <div class="mentors-row">
-          <a href="https://orcid.org/0000-0001-5061-0462" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/rmc_pic.jpg" alt="Ruth Murray-Clay">
-            </div>
-            <div>
-              <div class="mentor-name">Prof. Ruth Murray-Clay</div>
-              <div class="mentor-role">UC Santa Cruz &middot; Planetary Astrophysics</div>
-            </div>
-          </a>
-          <a href="https://orcid.org/0000-0003-2872-760X" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/Ethan_Sc2_cropped.jpg" alt="Ethan">
-            </div>
-            <div>
-              <div class="mentor-name">Dr. Ethan Schreyer</div>
-              <div class="mentor-role">UC Santa Cruz</div>
-            </div>
-          </a>
+        <div class="mentors-section">
+          <span class="mentors-label">Advisors</span>
+          <div class="mentors-row">
+            <a href="https://orcid.org/0000-0001-5061-0462" target="_blank" class="mentor-card">
+              <div class="mentor-avatar"><img src="images/rmc_pic.jpg" alt="Ruth Murray-Clay"></div>
+              <div>
+                <div class="mentor-name">Prof. Ruth Murray-Clay</div>
+                <div class="mentor-role">UC Santa Cruz &middot; Planetary Astrophysics</div>
+              </div>
+            </a>
+            <a href="https://orcid.org/0000-0003-2872-760X" target="_blank" class="mentor-card">
+              <div class="mentor-avatar"><img src="images/Ethan_Sc2_cropped.jpg" alt="Ethan Schreyer"></div>
+              <div>
+                <div class="mentor-name">Dr. Ethan Schreyer</div>
+                <div class="mentor-role">UC Santa Cruz</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -447,33 +436,28 @@
 
       <p>To test the formula empirically, we used time-series photometry in six filters (<em>u, g, r, i</em>1, <em>i</em>2, <em>z</em>) from the CFHTLS Deep Fields, imaging four 1&thinsp;deg&sup2; fields with the CFHT 3.6-m telescope and MegaCam over nearly a decade. These empirical tests validate the heuristic formula across a wide range of parameter space. The formula tells observers how finely they need to sample period space when searching for RR Lyrae, and is broadly applicable to periodic variables in any time-domain survey — including the forthcoming <em>Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST)</em>.</p>
 
-      <!-- Figure -->
-      <div class="img-block">
-        <img src="images/enhanced_sip.png"
-             alt=""
-             class="figure-image">
-      
-        <p class="img-caption">
-          Periodogram peak width as a function of time baseline.
-        </p>
-      </div>
+      <!-- Single figure, floated left -->
+      <div class="clearfix">
+        <div class="fig-left">
+          <img src="images/enhanced_sip.png" alt="Periodogram peak width vs time baseline">
+          <p class="img-caption">Periodogram peak width as a function of time baseline.</p>
+        </div>
 
-      <div class="paper-links">
-        <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5q95jRYAAAAJ&citation_for_view=5q95jRYAAAAJ:u-x6o8ySG0sC" target="_blank">Google Scholar</a>
-      </div>
+        <div class="paper-links">
+          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5q95jRYAAAAJ&citation_for_view=5q95jRYAAAAJ:u-x6o8ySG0sC" target="_blank">Google Scholar</a>
+        </div>
 
-      <div class="mentors-section">
-        <span class="mentors-label">Advisor</span>
-        <div class="mentors-row">
-          <a href="https://www.ucolick.org/~raja/" target="_blank" class="mentor-card">
-            <div class="mentor-avatar">
-              <img src="images/raja-guhathakurta-300-1.jpg" alt="Raja GuhaThakurta">
-            </div>
-            <div>
-              <div class="mentor-name">Prof. Raja GuhaThakurta</div>
-              <div class="mentor-role">UC Santa Cruz</div>
-            </div>
-          </a>
+        <div class="mentors-section">
+          <span class="mentors-label">Advisor</span>
+          <div class="mentors-row">
+            <a href="https://www.ucolick.org/~raja/" target="_blank" class="mentor-card">
+              <div class="mentor-avatar"><img src="images/raja-guhathakurta-300-1.jpg" alt="Raja GuhaThakurta"></div>
+              <div>
+                <div class="mentor-name">Prof. Raja GuhaThakurta</div>
+                <div class="mentor-role">UC Santa Cruz</div>
+              </div>
+            </a>
+          </div>
         </div>
       </div>
 
@@ -482,7 +466,6 @@
     </div><!-- /.inner -->
   </div><!-- /#main -->
 
-  <!-- Footer -->
   <footer id="footer">
     <div class="inner">
       <ul class="icons">
