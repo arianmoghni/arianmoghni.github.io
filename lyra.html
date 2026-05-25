@@ -26,6 +26,24 @@
       margin-bottom: 0.3em; display: block;
     }
 
+    .center-figure {
+    text-align: center;
+    margin: 2em 0;
+    }
+    
+    .center-figure img {
+        max-width: 600px;   /* adjust as desired */
+        width: 100%;
+        height: auto;
+        display: inline-block;
+    }
+    
+    .center-figure .img-caption {
+        max-width: 700px;
+        margin: 0.5em auto 0;
+        text-align: left;   /* or center if you prefer */
+    }
+
     .keyword-strip { margin: 0 0 1.2em; }
     .kw {
       display: inline-block;
@@ -280,7 +298,7 @@
             <img src="images/four_galaxies.png" alt="Red geyser examples">
             <p class="img-caption"><strong>Red Geyser Examples.</strong> DESI Legacy Survey images and MaNGA H&alpha; EW maps for four red geysers, classified by environment: interacting, disturbed, undisturbed with companion, and isolated. The cyan hexagon marks the MaNGA footprint.</p>
           </div>
-          <div>
+          <div class="center-figure">
             <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
             <p class="img-caption"><strong>Feedback cycle.</strong> Interactions supply cool gas (1-2), which rains inward to fuel the AGN (3). Black hole feedback heats surrounding gas (4), keeping the galaxy quiescent (5).</p>
           </div>
@@ -439,7 +457,7 @@
           </div>
         </div>
 
-        <div class="fig-col">
+        <div class="center-figure">
           <img src="images/enhanced_sip.png" alt="Periodogram peak width vs time baseline">
           <p class="img-caption">Periodogram peak width as a function of time baseline.</p>
         </div>
