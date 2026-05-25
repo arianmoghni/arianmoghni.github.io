@@ -92,6 +92,30 @@
       display: block;
     }
 
+    .research-body-wrap {
+      overflow: auto; /* clears float */
+    }
+    
+    .float-right {
+      float: right;
+      width: 420px;
+      margin: 0 0 1em 2em;
+    }
+    
+    .float-right img {
+      width: 100%;
+      height: auto;
+    }
+    
+    @media (max-width: 700px) {
+      .float-right {
+        float: none;
+        display: block;
+        width: 100%;
+        margin: 0 0 1em 0;
+      }
+    }
+
     /* Centered figure below a research-body block */
     .fig-center {
       text-align: center;
@@ -256,30 +280,36 @@
       </div>
 
       <!-- Text + four_galaxies on the right -->
-      <div class="research-body">
+      <!-- <div class="research-body">
         <div class="text-col">
-          <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, more importantly, how they <em>stay</em> quiet for billions of years, even when they still contain gas that could fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) with large-scale, weak, bi-symmetric ionized gas outflows, interpreted as signatures of ongoing low-level AGN feedback. But what fuels the AGN in the first place?</p>
+          
+      
+          <div class="research-body-wrap">
+            <img src="images/four_galaxies.png"
+                 alt="Red geysers"
+                 class="float-right">
+          
+            <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, more importantly, how they <em>stay</em> quiet for billions of years, even when they still contain gas that could fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) with large-scale, weak, bi-symmetric ionized gas outflows, interpreted as signatures of ongoing low-level AGN feedback. But what fuels the AGN in the first place?</p>
+            <p>I led an investigation into the mechanisms of quiescence by mapping the cool and warm interstellar gas (traced by Na&thinsp;I&thinsp;D and Ca&thinsp;II absorption) in 140 red geyser galaxies at z&thinsp;&sim;&thinsp;0.04. Using spatially resolved spectra from the SDSS-IV <a href="https://www.sdss.org/surveys/manga/" target="_blank">MaNGA</a> survey, I fitted double-Gaussian profiles to the Na&thinsp;I&thinsp;D doublet to measure spatially resolved velocities and velocity dispersions, revealing whether gas is flowing in or out.</p>
+            <p>About 70% of the cool gas shows inflow signatures, with a median velocity of ~47 km/s, roughly 10% of the expected free-fall speed. This slow, organized infall suggests a continuous drizzle of cool clouds raining toward the galactic center to feed the supermassive black hole.</p>
+            <p>Red geysers interacting with nearby companions, or showing signs of past minor mergers, have inflowing gas reservoirs about 2.7 times larger than isolated systems. Red geysers detected in radio, a sign of an active central black hole, have inflow reservoirs nearly 7 times larger than radio-quiet ones.</p>
+            <p>These results support a self-regulating cycle: galaxy interactions deliver cool gas, which rains inward and feeds the AGN; the AGN heats the surrounding gas; star formation stays suppressed. Quiescence is not a one-time event but an actively maintained state. This work produced two first-author papers (one in prep.) and a Best Undergraduate Research Poster award at the APS regional meeting. I was 1 of 32 researchers from over 2,900 attendees invited to the 247th AAS Press Conference in January 2026.</p> -->
 
-          <p>I led an investigation into the mechanisms of quiescence by mapping the cool and warm interstellar gas (traced by Na&thinsp;I&thinsp;D and Ca&thinsp;II absorption) in 140 red geyser galaxies at z&thinsp;&sim;&thinsp;0.04. Using spatially resolved spectra from the SDSS-IV <a href="https://www.sdss.org/surveys/manga/" target="_blank">MaNGA</a> survey, I fitted double-Gaussian profiles to the Na&thinsp;I&thinsp;D doublet to measure spatially resolved velocities and velocity dispersions, revealing whether gas is flowing in or out.</p>
+          </div>
 
-          <p>About 70% of the cool gas shows inflow signatures, with a median velocity of ~47 km/s, roughly 10% of the expected free-fall speed. This slow, organized infall suggests a continuous drizzle of cool clouds raining toward the galactic center to feed the supermassive black hole.</p>
-
-          <p>Red geysers interacting with nearby companions, or showing signs of past minor mergers, have inflowing gas reservoirs about 2.7 times larger than isolated systems. Red geysers detected in radio, a sign of an active central black hole, have inflow reservoirs nearly 7 times larger than radio-quiet ones.</p>
-
-          <p>These results support a self-regulating cycle: galaxy interactions deliver cool gas, which rains inward and feeds the AGN; the AGN heats the surrounding gas; star formation stays suppressed. Quiescence is not a one-time event but an actively maintained state. This work produced two first-author papers (one in prep.) and a Best Undergraduate Research Poster award at the APS regional meeting. I was 1 of 32 researchers from over 2,900 attendees invited to the 247th AAS Press Conference in January 2026.</p>
-
+      
           <div class="paper-links">
             <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae5f90" target="_blank">The Astrophysical Journal</a>
             <a href="https://news.ucsc.edu/2026/01/red-geyser-galaxies/" target="_blank">UCSC Press Release</a>
             <a href="https://www.universetoday.com/articles/red-geyser-galaxies-have-plenty-of-star-forming-gas-but-dont-form-stars" target="_blank">Universe Today</a>
             <a href="https://interestingengineering.com/space/red-geysers-explain-galaxies-shut-star-formation" target="_blank">Interesting Engineering</a>
           </div>
-        </div>
+        <!-- </div> -->
 
-        <div class="fig-col">
+        <!-- <div class="fig-col">
           <img src="images/four_galaxies.png" alt="Red geyser examples">
           <p class="img-caption"><strong>Red Geyser Examples.</strong> DESI Legacy Survey images and MaNGA H&alpha; EW maps for four red geysers, classified by environment: interacting, disturbed, undisturbed with companion, and isolated. The cyan hexagon marks the MaNGA footprint.</p>
-        </div>
+        </div> -->
       </div>
 
       <!-- Red geyser summary figure centered below -->
