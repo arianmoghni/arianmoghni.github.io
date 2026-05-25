@@ -26,24 +26,6 @@
       margin-bottom: 0.3em; display: block;
     }
 
-    .center-figure {
-    text-align: center;
-    margin: 2em 0;
-    }
-    
-    .center-figure img {
-        max-width: 600px;   /* adjust as desired */
-        width: 100%;
-        height: auto;
-        display: inline-block;
-    }
-    
-    .center-figure .img-caption {
-        max-width: 700px;
-        margin: 0.5em auto 0;
-        text-align: left;   /* or center if you prefer */
-    }
-
     .keyword-strip { margin: 0 0 1.2em; }
     .kw {
       display: inline-block;
@@ -79,20 +61,7 @@
       margin-top: 4px; line-height: 1.4;
     }
 
-    .key-finding {
-      border-left: 3px solid var(--ac-border);
-      padding: 0.9em 1.4em;
-      margin: 1.5em 0;
-      background: var(--ac-bg);
-      border-radius: 0 4px 4px 0;
-    }
-    .key-finding p { margin: 0; font-style: italic; }
-    .key-finding cite {
-      display: block; font-style: normal;
-      font-size: 0.75em; opacity: 0.6; margin-top: 0.4em;
-    }
-
-    /* ── Research body: text + figure side by side ───────────── */
+    /* Research body: text + figure side by side */
     .research-body {
       display: flex;
       gap: 2em;
@@ -105,12 +74,10 @@
     }
     .research-body .text-col p { margin-top: 0; }
 
-    /* single figure on the right */
     .research-body .fig-col {
       flex: 0 0 420px;
       width: 420px;
     }
-    
     .research-body .figs-col {
       flex: 0 0 420px;
       width: 420px;
@@ -124,12 +91,29 @@
       height: auto;
       display: block;
     }
+
+    /* Centered figure below a research-body block */
+    .fig-center {
+      text-align: center;
+      margin: 1.5em 0 0;
+    }
+    .fig-center img {
+      max-width: 560px;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+    .fig-center .img-caption {
+      max-width: 560px;
+      margin: 0.4em auto 0;
+      text-align: left;
+    }
+
     .img-caption {
       font-size: 0.72em; opacity: 0.65;
       margin-top: 0.4em; line-height: 1.5;
     }
 
-    /* Placeholder for missing images */
     .img-placeholder {
       border: 2px dashed rgba(144,144,144,0.3);
       display: flex; align-items: center; justify-content: center;
@@ -230,7 +214,6 @@
 
       <h1>Research</h1>
 
-      <!-- AAS hero photo — centered, full size -->
       <div class="hero-photo-section">
         <img src="images/AAS247_PM_1162 2.jpg"
              alt="Arian Moghni at the AAS press conference"
@@ -272,7 +255,7 @@
         </div>
       </div>
 
-      <!-- Text + two figures side by side -->
+      <!-- Text + four_galaxies on the right -->
       <div class="research-body">
         <div class="text-col">
           <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, more importantly, how they <em>stay</em> quiet for billions of years, even when they still contain gas that could fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) with large-scale, weak, bi-symmetric ionized gas outflows, interpreted as signatures of ongoing low-level AGN feedback. But what fuels the AGN in the first place?</p>
@@ -293,16 +276,16 @@
           </div>
         </div>
 
-        <div class="figs-col">
-          <div>
-            <img src="images/four_galaxies.png" alt="Red geyser examples">
-            <p class="img-caption"><strong>Red Geyser Examples.</strong> DESI Legacy Survey images and MaNGA H&alpha; EW maps for four red geysers, classified by environment: interacting, disturbed, undisturbed with companion, and isolated. The cyan hexagon marks the MaNGA footprint.</p>
-          </div>
-          <div class="center-figure">
-            <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
-            <p class="img-caption"><strong>Feedback cycle.</strong> Interactions supply cool gas (1-2), which rains inward to fuel the AGN (3). Black hole feedback heats surrounding gas (4), keeping the galaxy quiescent (5).</p>
-          </div>
+        <div class="fig-col">
+          <img src="images/four_galaxies.png" alt="Red geyser examples">
+          <p class="img-caption"><strong>Red Geyser Examples.</strong> DESI Legacy Survey images and MaNGA H&alpha; EW maps for four red geysers, classified by environment: interacting, disturbed, undisturbed with companion, and isolated. The cyan hexagon marks the MaNGA footprint.</p>
         </div>
+      </div>
+
+      <!-- Red geyser summary figure centered below -->
+      <div class="fig-center">
+        <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
+        <p class="img-caption"><strong>Feedback cycle.</strong> Interactions supply cool gas (1-2), which rains inward to fuel the AGN (3). Black hole feedback heats surrounding gas (4), keeping the galaxy quiescent (5).</p>
       </div>
 
       <div class="mentors-section">
@@ -360,7 +343,12 @@
 
           <p>A key challenge in spectroscopy is deciding whether a spectral feature is a real signal or just noise. I developed Gaussian fitting routines and chi-squared tests to assess the statistical significance of emission and absorption lines in noisy HST and JWST spectra, and taught the team to apply these methods to their own datasets. Students gained hands-on experience going from raw spectra to quantitative confidence statements.</p>
         </div>
-        <!-- No figure for this section, text-col takes full width naturally -->
+      </div>
+
+      <!-- Mentees photo centered below -->
+      <div class="fig-center">
+        <img src="images/mentees_astr9.png" alt="Mentees at ASTR 9 research symposium">
+        <p class="img-caption">Mentees presenting their work at the UC Santa Cruz ASTR 9 Research Symposium.</p>
       </div>
 
       <div class="mentors-section">
@@ -390,13 +378,8 @@
         <span class="kw">Order-of-Magnitude Calculations</span>
       </div>
 
+      <!-- Figure on the left, text on the right -->
       <div class="research-body">
-        <div class="text-col">
-          <p>Hot Jupiters are gas giant exoplanets on very close-in orbits. They receive intense radiation from their host stars, which can drive atmospheric escape and may form a diffuse plasma torus along the planet's orbital path. Detecting this torus would give a direct measurement of atmospheric mass-loss rates.</p>
-
-          <p>I built a forward model to predict whether this torus could be detected, as a function of stellar mass, stellar radius, gas temperature, orbital distance, and ionizing flux. The model simulates expected spectra and the resulting absorption lines, and outputs the probability of a torus detection for any given system. It can rank candidate Hot Jupiter systems by detectability, helping focus telescope time on the most promising targets. Findings were presented at the UC Santa Cruz ASTR 9 Research Symposium.</p>
-        </div>
-
         <div class="fig-col">
           <div class="img-placeholder">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
@@ -406,7 +389,13 @@
             </svg>
             <span>e.g. images/exo_atm.png</span>
           </div>
-          <p class="img-caption">Placeholder — add a figure from your torus modeling work here.</p>
+          <p class="img-caption">Placeholder - add a figure from your torus modeling work here.</p>
+        </div>
+
+        <div class="text-col">
+          <p>Hot Jupiters are gas giant exoplanets on very close-in orbits. They receive intense radiation from their host stars, which can drive atmospheric escape and may form a diffuse plasma torus along the planet's orbital path. Detecting this torus would give a direct measurement of atmospheric mass-loss rates.</p>
+
+          <p>I built a forward model to predict whether this torus could be detected, as a function of stellar mass, stellar radius, gas temperature, orbital distance, and ionizing flux. The model simulates expected spectra and the resulting absorption lines, and outputs the probability of a torus detection for any given system. It can rank candidate Hot Jupiter systems by detectability, helping focus telescope time on the most promising targets. Findings were presented at the UC Santa Cruz ASTR 9 Research Symposium.</p>
         </div>
       </div>
 
@@ -456,11 +445,12 @@
             <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5q95jRYAAAAJ&citation_for_view=5q95jRYAAAAJ:u-x6o8ySG0sC" target="_blank">Google Scholar</a>
           </div>
         </div>
+      </div>
 
-        <div class="center-figure">
-          <img src="images/enhanced_sip.png" alt="Periodogram peak width vs time baseline">
-          <p class="img-caption">Periodogram peak width as a function of time baseline.</p>
-        </div>
+      <!-- SIP figure centered below -->
+      <div class="fig-center">
+        <img src="images/enhanced_sip.png" alt="Periodogram peak width vs time baseline">
+        <p class="img-caption">Periodogram peak width as a function of time baseline.</p>
       </div>
 
       <div class="mentors-section">
