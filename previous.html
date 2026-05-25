@@ -17,36 +17,26 @@
     }
 
     /* ── Earth opening section ──────────────────────────────── */
-    /* ── Earth opening section ──────────────────────────────── */
     .earth-section {
       position: relative;
       margin-bottom: 3em;
     }
-    
     .earth-img-wrap {
       position: relative;
       width: 70%;
-      margin: 0 auto;      /* center the image */
-      overflow: hidden;
+      margin: 0 auto;
     }
-    
     .earth-img-wrap img {
-      width: 100%;         /* fill the wrapper */
-      height: auto;        /* preserve aspect ratio */
+      width: 100%;
+      height: auto;
       display: block;
       filter: brightness(0.72);
     }
-    
     .earth-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(
-        to bottom,
-        transparent 30%,
-        rgba(0, 0, 0, 0.55) 100%
-      );
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.55) 100%);
     }
-    
     .earth-credit {
       position: absolute;
       bottom: 0.7em;
@@ -56,7 +46,6 @@
       color: #fff;
       letter-spacing: 0.04em;
     }
-    
     .earth-prose {
       max-width: 780px;
       margin: 2em auto 0;
@@ -64,11 +53,9 @@
       line-height: 1.85;
       color: inherit;
     }
-    
     .earth-prose p {
       margin-bottom: 1.1em;
     }
-    
     .earth-prose .drop-cap::first-letter {
       float: left;
       font-size: 3.8em;
@@ -77,7 +64,6 @@
       color: var(--ac-border);
       font-weight: 700;
     }
-    
     .earth-signature {
       font-size: 0.72em;
       opacity: 0.5;
@@ -164,7 +150,6 @@
       line-height: 1.5;
     }
 
-    /* two images side by side, centered */
     .fig-pair {
       display: flex;
       gap: 1.2em;
@@ -181,7 +166,6 @@
       display: block;
     }
 
-    /* centered single figure */
     .fig-center {
       text-align: center;
       margin: 1.5em 0;
@@ -269,14 +253,11 @@
     .griffith-text p { margin-top: 0; }
 
     @media (max-width: 700px) {
-      .fig-right, .fig-left {
-        float: none;
-        width: 100%;
-        margin: 1em 0;
-      }
+      .fig-right, .fig-left { float: none; width: 100%; margin: 1em 0; }
       .fig-pair { flex-direction: column; }
       .griffith-wrap { flex-direction: column; }
       .griffith-cover { width: 100%; flex: none; }
+      .earth-img-wrap { width: 100%; }
     }
   </style>
 </head>
@@ -344,7 +325,7 @@
            ════════════════════════════════════ -->
       <hr class="accent" />
       <span class="section-label">On Purpose</span>
-      <h3>Why Any of This Matters</h3>
+      <h3>Why I Do This</h3>
 
       <div class="outreach-body">
         <div class="fig-right">
@@ -352,11 +333,11 @@
           <p class="img-caption">Outreach event with community students.</p>
         </div>
 
-        <p>I grew up in Iran, in a country where the language of science was not always the language people spoke at home, where access to the kind of knowledge that changes lives was unevenly distributed, and where the distance between a curious child and a research university felt vast. That distance is not unique to Iran. It exists in every city, in every language, wherever a young person looks at the night sky and has no one to tell them that the sky is a question they are allowed to ask.</p>
+        <p>Not everyone grows up with a telescope, a library, or a teacher who says: you could do this. I did not. I grew up knowing that curiosity was free, but almost everything else that fed it cost something. I watched brilliant people around me hit walls that had nothing to do with their ability and everything to do with what they had access to. That stayed with me.</p>
 
-        <p>Science communication is not a footnote to research. It is the reason research matters to anyone beyond the people doing it. The most precise measurement, the most elegant theory, the most careful observation, all of it is diminished if the circle of people who benefit from it stays small. I believe that circle should be as wide as the sky we study. That belief is not abstract for me. It drives every talk I give, every post I write, every student I mentor. It is the thread that connects my work at Johns Hopkins to a teenager in Tehran reading a post in Farsi at midnight, to a high school student in Santa Cruz who did not know that people like her became astronomers.</p>
+        <p>Science, as it is often practiced, is a conversation that not everyone is invited into. The barrier is sometimes language, sometimes money, sometimes geography, sometimes simply not knowing that a door exists. I have spent years trying to remove those barriers wherever I can reach them: writing science in Farsi so that Persian speakers around the world can read it in their own language, tutoring students from underserved communities so that a math class does not end a dream, mentoring high schoolers through college applications so that the process itself is not the obstacle.</p>
 
-        <p>I want to close gaps. Between languages. Between communities. Between curiosity and opportunity. That is what this page is about.</p>
+        <p>The stars were never meant for a chosen few. They were always meant to belong to all of us. That is not a poetic idea for me. It is the reason I show up.</p>
       </div>
 
       <!-- ════════════════════════════════════
@@ -377,7 +358,7 @@
         </div>
         <div class="impact-cell">
           <span class="impact-num">3</span>
-          <span class="impact-label">High school mentees placed at Penn, Case Western, and beyond</span>
+          <span class="impact-label">High school mentees from underserved communities placed at top universities</span>
         </div>
       </div>
 
@@ -387,22 +368,22 @@
            ════════════════════════════════════ -->
       <hr class="accent" />
       <span class="section-label">Science Communication &middot; Since 2022</span>
-      <h3>NASA Farsi IR: Breaking the Language Barrier</h3>
+      <h3>NASA Farsi IR</h3>
 
       <div class="outreach-body">
         <div class="fig-left">
           <img src="images/sun_img.jpg" alt="NASA Farsi IR Instagram posts">
-          <p class="img-caption">A sample of posts from <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank">@nasa_farsi_ir</a>, where research findings and astronomy fundamentals are explained in Farsi for a global Persian-speaking audience.</p>
+          <p class="img-caption">Posts from <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank">@nasa_farsi_ir</a>, explaining new research and astronomy fundamentals in Farsi.</p>
         </div>
 
-        <p>In February 2022, I started managing and writing for <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank"><strong>NASA Farsi IR</strong></a> on Instagram, an account that translates new research findings and astronomy and physics fundamentals into Farsi for Persian-speaking audiences around the world. Over 1,300 posts later, the account has accumulated more than 500,000 combined views on Instagram and LinkedIn in a single year.</p>
+        <p>In February 2022, I started managing and writing for <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank"><strong>NASA Farsi IR</strong></a>, an Instagram account that covers new research findings and astronomy and physics fundamentals in Farsi. Over 1,300 posts later, the account has reached more than 500,000 combined views on Instagram and LinkedIn in a single year.</p>
 
-        <p>The goal was simple but felt urgent: the most exciting science in the world was being published in English, discussed in English, celebrated in English. But hundreds of millions of Farsi speakers, including many with deep curiosity and talent, had no access to it in their own language. I wanted to change that, one post at a time.</p>
+        <p>The reason was straightforward: the most significant science happening in the world was being published, discussed, and celebrated almost entirely in English. Hundreds of millions of Farsi speakers, many of them deeply curious, had no path to it in their own language. That gap did not have to exist. So I started filling it.</p>
 
-        <p>The account covers everything from the daily discoveries of NASA missions to the physics of how stars are born and die, the history of the solar system, and how astronomers measure distances across the universe. In the summers, I have hosted live international meetings discussing stellar evolution, the history of the solar system, and future space missions, bringing together Persian-speaking audiences from Iran, Afghanistan, the diaspora, and beyond for real conversations about science.</p>
+        <p>The account covers NASA mission discoveries, how stars live and die, the history of the solar system, how we measure distances across the universe, and more. In the summers, I have hosted live international discussions on topics like stellar evolution and future space missions, open to Persian-speaking audiences from Iran, Afghanistan, and the diaspora. Science does not stop at a border, and it should not stop at a language either.</p>
 
         <div class="pull-quote">
-          Science has no mother tongue. Every person, in every language, deserves to look up at the same sky and understand what they are seeing.
+          Science has no mother tongue. Every person, in every language, deserves to understand what we are learning about the universe we all share.
         </div>
       </div>
 
@@ -420,11 +401,11 @@
           <p class="img-caption"><em>Griffith Observer</em> magazine, February 2026. My article "The Spectrum: A Key to Understanding the Universe" appears in this issue.</p>
         </div>
         <div class="griffith-text">
-          <p>In March 2025, I was awarded 4th Prize in the <strong>Joan and Arnold Seidel Griffith Observer Science Writing Contest</strong>, making me the only undergraduate winner among international university faculty and professional science writers. The jury described the winning entries as the "best articles in astronomy, astrophysics, and space science" that stimulate "the flow of information between scientists, science writers, and the public."</p>
+          <p>In March 2025, I received 4th Prize in the <strong>Joan and Arnold Seidel Griffith Observer Science Writing Contest</strong>, the only undergraduate among international faculty and professional science writers to be recognized. The jury selected winning entries as the "best articles in astronomy, astrophysics, and space science" for stimulating "the flow of information between scientists, science writers, and the public." The article was published in the <em>Griffith Observer</em> in February 2026.</p>
 
-          <p>The article, published in the <em>Griffith Observer</em> in February 2026, uses the spectrum as a lens through which to explain how astronomers read the universe. Light, when broken apart, becomes a language. Every star, every galaxy, every cloud of gas in the void between worlds has a story written in wavelengths, and the spectrum is the key to reading it. The article was written to be accessible to anyone curious about how we know what we know about the cosmos.</p>
+          <p>The piece uses the spectrum as a way to explain how astronomers read the universe. When light is broken apart, it carries information: the chemical composition of a star, the temperature of a galaxy, the speed of a gas cloud moving through space. The spectrum is how we know almost everything we know about the cosmos beyond our solar system. The article was written for anyone curious about how that works, with no prior knowledge assumed.</p>
 
-          <p>Writing for a general audience is a discipline I take as seriously as any technical skill. To explain something clearly, you have to understand it deeply. And to make someone care, you have to remind them why it matters to them. That is the work.</p>
+          <p>Writing for a broad audience requires a different kind of discipline than writing for specialists. You have to be precise enough to be true and clear enough that truth lands. That tension is something I find worthwhile.</p>
 
           <div class="pull-quote">
             Selected as one of the best articles in astronomy, astrophysics, and space science for stimulating the flow of information between scientists, science writers, and the public.
@@ -439,7 +420,7 @@
            ════════════════════════════════════ -->
       <hr class="accent" />
       <span class="section-label">Mentoring &middot; Ongoing</span>
-      <h3>Mentoring: Widening the Circle</h3>
+      <h3>Mentoring</h3>
 
       <div class="outreach-body">
         <div class="fig-right">
@@ -447,15 +428,13 @@
           <p class="img-caption">A networking event hosted through the UC Santa Cruz Physics Mentoring Program.</p>
         </div>
 
-        <p>The most direct form of outreach is a conversation. I have tried to have as many of those as possible.</p>
+        <p>Access is unequal in ways that are easy to overlook from the inside. A student who does not know what an REU is cannot apply for one. A student who has never met a working physicist does not know what that path looks like. A student navigating a college application without guidance can lose an opportunity not because of their ability but because of the paperwork. These are solvable problems.</p>
 
-        <p>As Program Lead of the <strong>UC Santa Cruz Physics Mentoring Program</strong>, I connected 96 mentors and mentees across the department, building a structure where undergraduates interested in physics and astrophysics can find support for graduate school applications, summer REU programs, coursework, and research. I host networking events that put students in the same room as researchers, creating the kinds of informal connections that often determine whether someone stays in the field.</p>
+        <p>As Program Lead of the <strong>UC Santa Cruz Physics Mentoring Program</strong>, I connected 96 mentors and mentees across physics and astrophysics, building a structure so that students can find support for graduate school applications, summer research programs, coursework, and anything else they need. I host networking events that put students in direct contact with researchers, creating the kind of access that some students arrive with automatically and others have never had.</p>
 
-        <p>Through the <strong>Young Voyagers Mentoring Program</strong>, I work with high school students from underserved communities in physics, astronomy, college applications, and scholarships. One of my mentees received a full-ride to the University of Pennsylvania. Another was accepted to Case Western Reserve University as an international student. A third is currently a senior preparing to apply. These outcomes matter more to me than almost anything else I have done.</p>
+        <p>Through the <strong>Young Voyagers Mentoring Program</strong>, I work with high school students from underserved communities on physics, college applications, and scholarships. One mentee received a full-ride to the University of Pennsylvania. Another was accepted to Case Western Reserve University as an international student. A third is a current senior. I led a college application workshop at Harbor High School in Santa Cruz for the same reason: the process should not be a wall.</p>
 
-        <p>I also volunteer as a tutor with the <strong>Learn To Be Organization</strong>, teaching AP Calculus AB, AP Physics 1, Honors Algebra 2, and Geometry to middle and high school students from underserved communities. And at UC Santa Cruz, I served as a research peer mentor for four first-year undergraduates in an introductory research class, guiding them through data analysis, computational tools, scientific writing, and presenting their findings.</p>
-
-        <p>I led a college application workshop at Harbor High School in Santa Cruz, because the paperwork and process of applying to college should not be a barrier that talent cannot cross.</p>
+        <p>I also volunteer as a tutor with the <strong>Learn To Be Organization</strong>, teaching AP Calculus AB, AP Physics 1, Honors Algebra 2, and Geometry to middle and high school students from underserved communities. At UC Santa Cruz, I served as a research peer mentor for four first-year undergraduates, guiding them through data analysis, scientific writing, and presenting findings from HST and JWST spectra. None of these students came in knowing how to do this work. All of them left knowing more than when they started.</p>
       </div>
 
       <div class="activity-row">
@@ -483,7 +462,7 @@
            ════════════════════════════════════ -->
       <hr class="accent" />
       <span class="section-label">Leadership &amp; Public Talks &middot; Ongoing</span>
-      <h3>Bringing Physics Into the Open</h3>
+      <h3>Making Physics Feel Like It Belongs to Everyone</h3>
 
       <div class="outreach-body">
         <div class="fig-left">
@@ -491,11 +470,11 @@
           <p class="img-caption">UC Santa Cruz Society of Physics Students.</p>
         </div>
 
-        <p>As President of the <strong>UC Santa Cruz Society of Physics Students (SPS)</strong> since September 2023, I have tried to make physics feel like something that belongs to everyone. I led the university-wide research showcase connecting undergraduates with physics and astronomy faculty. I hosted graduate school and REU workshops to demystify what comes after a bachelor's degree. I raised over $5,500 in funding and led outreach events for community college and middle school students.</p>
+        <p>As President of the <strong>UC Santa Cruz Society of Physics Students (SPS)</strong> since September 2023, I have worked to make the department feel less like a closed room. I led a university-wide research showcase connecting undergraduates with physics and astronomy faculty. I ran graduate school and REU workshops for students who did not grow up knowing those pathways existed. I raised over $5,500 and organized outreach events for community college and middle school students, because the earlier someone sees that science is for them, the more likely they are to believe it.</p>
 
-        <p>I have given public talks under the "No Jargon" format at UC Santa Cruz, including one called <em>Galactic Rain and the Death of Galaxies</em> and another called <em>A More Accurate Period for Variable Stars</em>, both designed to make active research accessible to audiences with no background in astrophysics. I have also spoken at Foothill High School in Pleasanton about galaxy evolution, and at the Leadership Alliance National Symposium, reaching audiences far beyond the university.</p>
+        <p>I give public talks in the "No Jargon" format at UC Santa Cruz, including <em>Galactic Rain and the Death of Galaxies</em> and <em>A More Accurate Period for Variable Stars</em>, both written for audiences with no background in astrophysics. I have spoken at Foothill High School in Pleasanton about galaxy evolution, and at the Leadership Alliance National Symposium. Each talk is a chance to make active research legible to people outside the room where it happens.</p>
 
-        <p>I believe that every talk given outside a conference room is a small act of democratization. The discoveries that happen in universities belong to the public that funds them and the world that they are about. Getting those discoveries out of the seminar room and into ordinary conversation is work I find genuinely urgent.</p>
+        <p>University research is largely funded by the public. The least it can do is speak to the public. I take that seriously.</p>
       </div>
 
       <div class="fig-pair">
@@ -504,8 +483,8 @@
           <p class="img-caption">Physics outreach with middle school students.</p>
         </div>
         <div class="fig-item">
-          <img src="images/grad_school_workshop.jpg" alt="SPS event">
-          <p class="img-caption">Hosted a graduate school workshop for undergraduates at UC Santa Cruz.</p>
+          <img src="images/grad_school_workshop.jpg" alt="Graduate school workshop">
+          <p class="img-caption">Graduate school and REU workshop for undergraduates at UC Santa Cruz.</p>
         </div>
       </div>
 
@@ -516,7 +495,7 @@
       <hr class="accent" />
 
       <div class="pull-quote" style="font-size: 1.08em; margin-bottom: 2em;">
-        We were always just guests on this planet. The least we can do, while we are here, is make sure that the knowledge we gather about it, and about everything beyond it, reaches as many of those guests as possible.
+        The stars were never meant for a chosen few. They were always meant to belong to all of us.
         <cite>Arian Moghni</cite>
       </div>
 
