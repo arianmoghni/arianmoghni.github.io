@@ -1,112 +1,557 @@
 <!DOCTYPE HTML>
-<!--
-	Phantom by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
-  <head>
-    <title>Arian Moghni</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <link rel="stylesheet" href="assets/academicons-1.9.1/css/academicons.css"/>
-	<link rel="icon" type="image/png" href="images/Aurora_Lick_copy.png" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-  </head>
-  <body class="is-preload">
-    <!-- Wrapper -->
-    <div id="wrapper">
-      
-      <!-- Header -->
-      <header id="header">
-	<div class="inner">
-	  
-	  <!-- Logo -->
-	  <a href="index.html" class="logo fix">
-	    <span class="symbol">
-	      <img src="images/Aurora_Lick_copy.jpg" alt=""/>
-	    </span>
-	    <span class="title">Arian Moghni</span>
-	  </a>
-	  
-	  <!-- Nav -->
-	  <nav>
-	    | <a href="index.html" class="logo"> <span class="title">Home</span>	</a> |
-	    <a href="lyra.html" class="logo"> <span class="title">Research</span>	</a> |
-	    <a href="previous.html" class="logo"> <span class="title">Outreach</span>	</a> |
-	    <a href="about.html" class="logo"> <span class="title">About</span>	</a> |
-	    <a href="cv.html" class="logo"> <span class="title">CV</span>	</a> |
-	  </nav>
-	  
-	</div>
-      </header>
-      
-      <!-- Menu -->
-      <nav id="menu">
-	<h2>Menu</h2>
-	<ul>
-	  <li><a href="index.html">Home</a></li>
-	  <li><a href="lyra.html">Research</a></li>
-	  <li><a href="previous.html">Outreach</a></li>
-	  <li><a href="about.html">About me</a></li>
-	  <li><a href="contact.html">Contact</a></li>
-	</ul>
+<head>
+  <title>Outreach — Arian Moghni</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <link rel="stylesheet" href="assets/academicons-1.9.1/css/academicons.css"/>
+  <link rel="icon" type="image/png" href="images/Aurora_Lick_copy.png" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <style>
+    :root {
+      --ac: #dc5700;
+      --ac-bg: rgba(220, 87, 0, 0.15);
+      --ac-border: rgba(220, 87, 0, 1);
+    }
+
+    /* ── Earth opening section ──────────────────────────────── */
+    .earth-section {
+      position: relative;
+      margin-bottom: 3em;
+    }
+    .earth-img-wrap {
+      position: relative;
+      width: 100%;
+      max-height: 520px;
+      overflow: hidden;
+    }
+    .earth-img-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.72);
+    }
+    .earth-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent 30%, rgba(0,0,0,0.55) 100%);
+    }
+    .earth-credit {
+      position: absolute;
+      bottom: 0.7em;
+      right: 1em;
+      font-size: 0.65em;
+      opacity: 0.55;
+      color: #fff;
+      letter-spacing: 0.04em;
+    }
+
+    .earth-prose {
+      max-width: 780px;
+      margin: 2em auto 0;
+      font-size: 1.05em;
+      line-height: 1.85;
+      color: inherit;
+    }
+    .earth-prose p {
+      margin-bottom: 1.1em;
+    }
+    .earth-prose .drop-cap::first-letter {
+      float: left;
+      font-size: 3.8em;
+      line-height: 0.78;
+      margin: 0.05em 0.1em 0 0;
+      color: var(--ac-border);
+      font-weight: 700;
+    }
+    .earth-signature {
+      font-size: 0.72em;
+      opacity: 0.5;
+      margin-top: 0.4em;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ── Section divider ────────────────────────────────────── */
+    hr.accent {
+      border: none;
+      border-top: 2px solid var(--ac-border);
+      margin: 2.5em 0 1.5em;
+    }
+
+    /* ── Section label ──────────────────────────────────────── */
+    .section-label {
+      font-size: 0.65em;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.5;
+      margin-bottom: 0.3em;
+      display: block;
+    }
+
+    /* ── Impact strip ───────────────────────────────────────── */
+    .impact-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      border: 1px solid var(--ac-border);
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 1.5em 0 2em;
+    }
+    .impact-cell {
+      flex: 1 1 160px;
+      padding: 1.2em 1.4em;
+      border-right: 1px solid rgba(220,87,0,0.3);
+      background: var(--ac-bg);
+    }
+    .impact-cell:last-child { border-right: none; }
+    .impact-num {
+      font-size: 2em;
+      font-weight: 700;
+      display: block;
+      line-height: 1;
+      color: var(--ac-border);
+    }
+    .impact-label {
+      font-size: 0.72em;
+      opacity: 0.65;
+      margin-top: 0.3em;
+      line-height: 1.4;
+      display: block;
+    }
+
+    /* ── Outreach body layout (text wraps figure) ───────────── */
+    .outreach-body {
+      margin: 1.2em 0 2em;
+      overflow: hidden;
+    }
+    .outreach-body p { margin-top: 0; }
+
+    .fig-right {
+      float: right;
+      width: 360px;
+      margin: 0 0 1.2em 2em;
+    }
+    .fig-left {
+      float: left;
+      width: 360px;
+      margin: 0 2em 1.2em 0;
+    }
+    .fig-right img, .fig-left img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .img-caption {
+      font-size: 0.72em;
+      opacity: 0.65;
+      margin-top: 0.4em;
+      line-height: 1.5;
+    }
+
+    /* two images side by side, centered */
+    .fig-pair {
+      display: flex;
+      gap: 1.2em;
+      margin: 1.5em 0;
+      justify-content: center;
+    }
+    .fig-pair .fig-item {
+      flex: 1 1 0;
+      max-width: 480px;
+    }
+    .fig-pair .fig-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* centered single figure */
+    .fig-center {
+      text-align: center;
+      margin: 1.5em 0;
+    }
+    .fig-center img {
+      max-width: 680px;
+      width: 100%;
+      height: auto;
+      display: inline-block;
+    }
+    .fig-center .img-caption {
+      max-width: 680px;
+      margin: 0.4em auto 0;
+      text-align: left;
+    }
+
+    /* ── Pull quote ─────────────────────────────────────────── */
+    .pull-quote {
+      border-left: 3px solid var(--ac-border);
+      padding: 0.9em 1.4em;
+      margin: 1.5em 0;
+      background: var(--ac-bg);
+      border-radius: 0 4px 4px 0;
+      font-style: italic;
+      font-size: 1.02em;
+      line-height: 1.7;
+    }
+    .pull-quote cite {
+      display: block;
+      font-style: normal;
+      font-size: 0.72em;
+      opacity: 0.55;
+      margin-top: 0.5em;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Activity cards ─────────────────────────────────────── */
+    .activity-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1em;
+      margin: 1em 0 2em;
+    }
+    .activity-card {
+      flex: 1 1 200px;
+      border: 1px solid rgba(144,144,144,0.2);
+      border-top: 3px solid var(--ac-border);
+      border-radius: 4px;
+      padding: 1em 1.2em;
+      background: var(--ac-bg);
+    }
+    .activity-card .act-title {
+      font-weight: 700;
+      font-size: 0.9em;
+      margin-bottom: 0.4em;
+      display: block;
+    }
+    .activity-card .act-detail {
+      font-size: 0.78em;
+      opacity: 0.68;
+      line-height: 1.5;
+    }
+
+    /* ── Griffith Observer spread ───────────────────────────── */
+    .griffith-wrap {
+      display: flex;
+      gap: 2em;
+      align-items: flex-start;
+      margin: 1.2em 0;
+      overflow: hidden;
+    }
+    .griffith-cover {
+      flex: 0 0 320px;
+      width: 320px;
+    }
+    .griffith-cover img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .griffith-text {
+      flex: 1 1 0;
+      min-width: 0;
+    }
+    .griffith-text p { margin-top: 0; }
+
+    @media (max-width: 700px) {
+      .fig-right, .fig-left {
+        float: none;
+        width: 100%;
+        margin: 1em 0;
+      }
+      .fig-pair { flex-direction: column; }
+      .griffith-wrap { flex-direction: column; }
+      .griffith-cover { width: 100%; flex: none; }
+    }
+  </style>
+</head>
+
+<body class="is-preload">
+<div id="wrapper">
+
+  <header id="header">
+    <div class="inner">
+      <a href="index.html" class="logo fix">
+        <span class="symbol"><img src="images/Aurora_Lick_copy.jpg" alt=""/></span>
+        <span class="title">Arian Moghni</span>
+      </a>
+      <nav>
+        | <a href="index.html" class="logo"><span class="title">Home</span></a> |
+        <a href="research.html" class="logo"><span class="title">Research</span></a> |
+        <a href="previous.html" class="logo"><span class="title">Outreach</span></a> |
+        <a href="about.html" class="logo"><span class="title">About</span></a> |
+        <a href="cv.html" class="logo"><span class="title">CV</span></a> |
       </nav>
-      
-      <!-- Main -->
-      <div id="main">
-	<div class="inner">
-	  <h1>Previous Work</h1>
-	  Here I summarize a few of my papers. For the rest, see <a href=https://ui.adsabs.harvard.edu/search/q=author%3A(%22gutcke%2C%20thales%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0>my papers on ADS.</a>
-	  <br /><br />
-	  <span
-	    class="image main"><img
-				 src="images/filament.png"
-				 alt="" />
-	  </span>
-	  <hr />
-	  <h3>IMF variations in MW-like galaxies (<a href=https://ui.adsabs.harvard.edu/abs/2019MNRAS.482..118G/abstract>ADS &#8599;</a>)</h3>
-	  <p>Observational and theoretical arguments increasingly suggest that the initial mass function (IMF) of stars may depend systematically on environment, yet most galaxy formation models to date assume a universal IMF. In this work I investigated simulations of the formation of Milky Way analogues run ab initio with an empirically derived metallicity-dependent IMF and the moving-mesh code AREPO in order to characterize the associated uncertainties. In particular, I compared a constant Chabrier and a varying metallicity-dependent IMF in cosmological, magnetohydrodynamical zoom-in simulations of Milky Way-sized haloes. I found that the non-linear effects due to IMF variations typically have a limited impact on the morphology and the star formation histories of the formed galaxies. My results support the view that constraints on stellar-to-halo mass ratios, feedback strength, metallicity evolution, and metallicity distributions are in part degenerate with the effects of a non-universal, metallicity-dependent IMF. Interestingly, the empirical relation I used between metallicity and the high-mass slope of the IMF does not aid in the quenching process. It actually produces up to a factor of 2–3 more stellar mass if feedback is kept constant. Additionally, the enrichment history and the z = 0 metallicity distribution are significantly affected. In particular, the alpha enhancement pattern shows a steeper dependence on iron abundance in the metallicity-dependent model, in better agreement with observational constraints.</p>
-	  <hr />
-	  <h3>The simulated CGM using the NIHAO suite (<a href=https://ui.adsabs.harvard.edu/abs/2017MNRAS.464.2796G/abstract>ADS &#8599;</a>)</h3>
-	  <p>
-	    <span class="image left"><img src="images/SFCycle.pdf" alt="" /></span>
-	    Using <a href=https://arxiv.org/abs/1503.04818>NIHAO</a>, I studied the hot and cold circum-galactic medium (CGM) of 86 simulated galaxies. NIHAO allows a study of how the z = 0 CGM varies across five orders of magnitude of stellar mass using O VI and H I as proxies for hot and cold gas. The cool H I covering fraction and column density profiles match observations well, particularly in the inner CGM. O VI shows increasing column densities with mass, a trend seemingly echoed in the observations. As in multiple previous simulations, the O VI column densities in simulations are lower than observed and optically thick H I does not extend as far out as in observations. I took a look at the collisional ionization fraction of O VI as a function of halo mass and made observable predictions of the bipolarity of outflows and their effect on the general shape of the CGM. Bipolar outflows can be seen out to around 40 kpc in intermediate- and low-mass haloes (M<sub>Halo</sub> < 10<sup>11</sup> M⊙), but outside that radius, the CGM is too well mixed to detect an elongated shape. Larger haloes have extended gas discs beyond the stellar disc that dominate the shape of the inner CGM. The simulated CGM is remarkably spherical even in low-mass simulations. The chemical enrichment of both halo and disc gas follow expected increasing trends as a function of halo mass that are well fit with power laws. These relations can be used in non-hydrodynamic models, such as semi-analytic models.  </p>
-          <hr />
-	  <h3>Quiescent elliptical galaxy formation (<a href=https://ui.adsabs.harvard.edu/abs/2017MNRAS.466.4614G/abstract>ADS &#8599;</a>)</h3>
-	  <p>
-	    <span class="image right"><img src="images/face6_352.png" alt="" /></span>
-	    The decrease in star formation (SF) and the morphological change necessary to produce the z = 0 elliptical galaxy population are commonly ascribed to a sudden quenching event, which is able to rid the central galaxy of its cold gas reservoir in a short time. Following this event, the galaxy is able to prevent further SF and stay quiescent via a maintenance mode. I tested whether such a quenching event is truly necessary using a simple model of quiescence. In this model, hot gas (all gas above a temperature threshold) in an ∼10<sup>12</sup> M⊙ halo mass galaxy at redshift z ∼ 3 is prevented from cooling. The cool gas continues to form stars at a decreasing rate and the galaxy stellar mass, morphology, velocity dispersion and position on the colour–magnitude diagram (CMD) proceed to evolve. By z = 0,the halo mass has grown to 10<sup>13</sup> M⊙ and the galaxy has attained characteristics typical of an observed z = 0 elliptical galaxy. The model is run in the framework of a cosmological, smooth particle hydrodynamic code that includes SF, early stellar feedback, supernova feedback, metal cooling and metal diffusion. Additionally, I post-processed the simulations with the radiative transfer SUNRISE code to create a mock CMD. In contrast to previous assumptions that a pure ‘fade away’ model evolves too slowly to account for the sparsity of galaxies in the ‘green valley’, I demonstrated crossing times of 1 Gyr. I concluded that no sudden quenching event is necessary to produce such rapid colour transitions.</p>
-	  <hr />
-	  <span class="image main"><img src="images/filament2.png" alt="" /></span>
-	</div>
-      </div>
-      
-      <!-- Footer -->
-      <footer id="footer">
-	<div class="inner">
-          <ul class="icons">
-	  <li><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#103;&#117;&#116;&#99;&#107;&#101;&#64;&#104;&#97;&#119;&#97;&#105;&#105;&#46;&#101;&#100;&#117;" class="icon"><i class="fas fa-envelope fa-3x"></i></a>
-            </li>
-	    <li><a href=https://ui.adsabs.harvard.edu/search/q=author%3A(%22gutcke%2C%20thales%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0 class="icon"><i class="ai ai-ads ai-3x"></i></a></li>
-            <li><a href=https://orcid.org/0000-0001-6179-7701 class="icon"><i class="ai ai-orcid ai-3x"></i></a></li>
-          </ul>
-	  <ul class="copyright">
-	    <li>&copy;
-	      Arian Moghni, May 2026. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-	  </ul>
-	</div>
-      </footer>
-      
     </div>
-    
-    <!-- Scripts -->
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-    
-  </body>
+  </header>
+
+  <nav id="menu">
+    <h2>Menu</h2>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="previous.html">Outreach</a></li>
+      <li><a href="about.html">About me</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div id="main">
+    <div class="inner">
+
+      <h1>Outreach</h1>
+
+      <!-- ════════════════════════════════════
+           Earth opening
+           ════════════════════════════════════ -->
+      <div class="earth-section">
+        <div class="earth-img-wrap">
+          <img src="images/replace.png" alt="Earth from Artemis II mission">
+          <div class="earth-overlay"></div>
+          <span class="earth-credit">NASA / Reid Wiseman / Artemis II</span>
+        </div>
+
+        <div class="earth-prose">
+          <p class="drop-cap">Look at her. Just look at her. Think of the mountains. Every mountain we've ever climbed is a wrinkle on her skin. Every deep ocean we have feared and crossed and drowned in is just a shallow layer below her skin. Every civilization we've built, every empire that rose to power and collapsed, from Romans and Babylonians to Mongols and even the ones lost in history, all of it happened here in the last second of her long, indifferent lifetime. And yet, she has not been indifferent. Before we could ask, she gave us food and fruit to eat. She gave us water to drink and air to breathe. She gave us a world with everything we would ever need.</p>
+
+          <p>Somewhere in some pixels a child is being born. In another, a man is dying alone in a room. Somewhere, a couple is falling in love, and somewhere else, a refugee is staring at a horizon. Somewhere, a scientist is on the edge of a discovery. Somewhere, someone is laughing so hard they can't breathe. And, somewhere, someone is crying about losing a loved one. All of it. All of it is happening here, on this mote of dust in the vastness of space, on a planet that from the right distance fits behind your thumb.</p>
+
+          <p>What does it mean to wage a war on one another? To become the temporary master of a fraction of a dot? Think about it. On this fragile, small, spinning thing, we drew lines in the soil and said, "This side is mine, and you are not welcome here." We gave names to the rivers and turned the names into reasons for killing one another. We used cloth to make flags and bled for the cloth as if the cloth could love us back.</p>
+
+          <p>She has watched it all. Century after century. Every burning village. The rise and fall of every empire. And not one of those empires took the sky with them when they fell. Not one of those borders outlasted the river it was drawn next to. Everything we claimed returned to her, and she generously gave it, unnamed and unheld, to whoever came next. She has always known something that we keep having to relearn: that nothing here was ever ours to keep. We were always just guests.</p>
+
+          <p class="earth-signature">Photo: NASA / Reid Wiseman, Artemis II &nbsp;&middot;&nbsp; Words: Arian Moghni</p>
+        </div>
+      </div>
+
+      <!-- ════════════════════════════════════
+           Why I do this
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+      <span class="section-label">On Purpose</span>
+      <h3>Why Any of This Matters</h3>
+
+      <div class="outreach-body">
+        <div class="fig-right">
+          <img src="images/replace.png" alt="Arian doing outreach">
+          <p class="img-caption">Outreach event with community students.</p>
+        </div>
+
+        <p>I grew up in Iran, in a country where the language of science was not always the language people spoke at home, where access to the kind of knowledge that changes lives was unevenly distributed, and where the distance between a curious child and a research university felt vast. That distance is not unique to Iran. It exists in every city, in every language, wherever a young person looks at the night sky and has no one to tell them that the sky is a question they are allowed to ask.</p>
+
+        <p>Science communication is not a footnote to research. It is the reason research matters to anyone beyond the people doing it. The most precise measurement, the most elegant theory, the most careful observation, all of it is diminished if the circle of people who benefit from it stays small. I believe that circle should be as wide as the sky we study. That belief is not abstract for me. It drives every talk I give, every post I write, every student I mentor. It is the thread that connects my work at Johns Hopkins to a teenager in Tehran reading a post in Farsi at midnight, to a high school student in Santa Cruz who did not know that people like her became astronomers.</p>
+
+        <p>I want to close gaps. Between languages. Between communities. Between curiosity and opportunity. That is what this page is about.</p>
+      </div>
+
+      <!-- ════════════════════════════════════
+           Impact numbers
+           ════════════════════════════════════ -->
+      <div class="impact-strip">
+        <div class="impact-cell">
+          <span class="impact-num">500K+</span>
+          <span class="impact-label">Post views across Instagram and LinkedIn in the past year</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-num">1,300+</span>
+          <span class="impact-label">Science posts written in Farsi for the general public</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-num">96</span>
+          <span class="impact-label">Mentors and mentees connected through the UCSC Physics Mentoring Program</span>
+        </div>
+        <div class="impact-cell">
+          <span class="impact-num">3</span>
+          <span class="impact-label">High school mentees placed at Penn, Case Western, and beyond</span>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           NASA Farsi IR
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+      <span class="section-label">Science Communication &middot; Since 2022</span>
+      <h3>NASA Farsi IR: Breaking the Language Barrier</h3>
+
+      <div class="outreach-body">
+        <div class="fig-left">
+          <img src="images/replace.png" alt="NASA Farsi IR Instagram posts">
+          <p class="img-caption">A sample of posts from <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank">@nasa_farsi_ir</a>, where research findings and astronomy fundamentals are explained in Farsi for a global Persian-speaking audience.</p>
+        </div>
+
+        <p>In February 2022, I started managing and writing for <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank"><strong>NASA Farsi IR</strong></a> on Instagram, an account that translates new research findings and astronomy and physics fundamentals into Farsi for Persian-speaking audiences around the world. Over 1,300 posts later, the account has accumulated more than 500,000 combined views on Instagram and LinkedIn in a single year.</p>
+
+        <p>The goal was simple but felt urgent: the most exciting science in the world was being published in English, discussed in English, celebrated in English. But hundreds of millions of Farsi speakers, including many with deep curiosity and talent, had no access to it in their own language. I wanted to change that, one post at a time.</p>
+
+        <p>The account covers everything from the daily discoveries of NASA missions to the physics of how stars are born and die, the history of the solar system, and how astronomers measure distances across the universe. In the summers, I have hosted live international meetings discussing stellar evolution, the history of the solar system, and future space missions, bringing together Persian-speaking audiences from Iran, Afghanistan, the diaspora, and beyond for real conversations about science.</p>
+
+        <div class="pull-quote">
+          Science has no mother tongue. Every person, in every language, deserves to look up at the same sky and understand what they are seeing.
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           Griffith Observer
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+      <span class="section-label">Science Writing &middot; Published February 2026</span>
+      <h3>The Spectrum: A Key to Understanding the Universe</h3>
+
+      <div class="griffith-wrap">
+        <div class="griffith-cover">
+          <img src="images/replace.png" alt="Griffith Observer magazine cover featuring Arian Moghni's article">
+          <p class="img-caption"><em>Griffith Observer</em> magazine, February 2026. My article "The Spectrum: A Key to Understanding the Universe" appears in this issue.</p>
+        </div>
+        <div class="griffith-text">
+          <p>In March 2025, I was awarded 4th Prize in the <strong>Joan and Arnold Seidel Griffith Observer Science Writing Contest</strong>, making me the only undergraduate winner among international university faculty and professional science writers. The jury described the winning entries as the "best articles in astronomy, astrophysics, and space science" that stimulate "the flow of information between scientists, science writers, and the public."</p>
+
+          <p>The article, published in the <em>Griffith Observer</em> in February 2026, uses the spectrum as a lens through which to explain how astronomers read the universe. Light, when broken apart, becomes a language. Every star, every galaxy, every cloud of gas in the void between worlds has a story written in wavelengths, and the spectrum is the key to reading it. The article was written to be accessible to anyone curious about how we know what we know about the cosmos.</p>
+
+          <p>Writing for a general audience is a discipline I take as seriously as any technical skill. To explain something clearly, you have to understand it deeply. And to make someone care, you have to remind them why it matters to them. That is the work.</p>
+
+          <div class="pull-quote">
+            Selected as one of the best articles in astronomy, astrophysics, and space science for stimulating the flow of information between scientists, science writers, and the public.
+            <cite>Joan and Arnold Seidel Griffith Observer Science Writing Contest jury, 2025</cite>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           Mentoring
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+      <span class="section-label">Mentoring &middot; Ongoing</span>
+      <h3>Mentoring: Widening the Circle</h3>
+
+      <div class="outreach-body">
+        <div class="fig-right">
+          <img src="images/replace.png" alt="Physics mentoring program event">
+          <p class="img-caption">A networking event hosted through the UC Santa Cruz Physics Mentoring Program.</p>
+        </div>
+
+        <p>The most direct form of outreach is a conversation. I have tried to have as many of those as possible.</p>
+
+        <p>As Program Lead of the <strong>UC Santa Cruz Physics Mentoring Program</strong>, I connected 96 mentors and mentees across the department, building a structure where undergraduates interested in physics and astrophysics can find support for graduate school applications, summer REU programs, coursework, and research. I host networking events that put students in the same room as researchers, creating the kinds of informal connections that often determine whether someone stays in the field.</p>
+
+        <p>Through the <strong>Young Voyagers Mentoring Program</strong>, I work with high school students from underserved communities in physics, astronomy, college applications, and scholarships. One of my mentees received a full-ride to the University of Pennsylvania. Another was accepted to Case Western Reserve University as an international student. A third is currently a senior preparing to apply. These outcomes matter more to me than almost anything else I have done.</p>
+
+        <p>I also volunteer as a tutor with the <strong>Learn To Be Organization</strong>, teaching AP Calculus AB, AP Physics 1, Honors Algebra 2, and Geometry to middle and high school students from underserved communities. And at UC Santa Cruz, I served as a research peer mentor for four first-year undergraduates in an introductory research class, guiding them through data analysis, computational tools, scientific writing, and presenting their findings.</p>
+
+        <p>I led a college application workshop at Harbor High School in Santa Cruz, because the paperwork and process of applying to college should not be a barrier that talent cannot cross.</p>
+      </div>
+
+      <div class="activity-row">
+        <div class="activity-card">
+          <span class="act-title">Physics Mentoring Program Lead</span>
+          <span class="act-detail">UC Santa Cruz &middot; Sep 2024 - Present<br>96 mentors and mentees connected across physics and astrophysics</span>
+        </div>
+        <div class="activity-card">
+          <span class="act-title">Young Voyagers Mentor</span>
+          <span class="act-detail">Aug 2023 - Present<br>High school students from underserved communities; 3 mentees placed at top universities</span>
+        </div>
+        <div class="activity-card">
+          <span class="act-title">Volunteer Tutor</span>
+          <span class="act-detail">Learn To Be &middot; Jan 2024 - Present<br>AP Calculus AB, AP Physics 1, Algebra 2, and Geometry for underserved students</span>
+        </div>
+        <div class="activity-card">
+          <span class="act-title">Research Peer Mentor</span>
+          <span class="act-detail">UCSC Intro to Research &middot; Jan - Jun 2025<br>Guided 4 first-year undergraduates through HST and JWST data analysis</span>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           SPS & Talks
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+      <span class="section-label">Leadership &amp; Public Talks &middot; Ongoing</span>
+      <h3>Bringing Physics Into the Open</h3>
+
+      <div class="outreach-body">
+        <div class="fig-left">
+          <img src="images/replace.png" alt="SPS outreach event or public talk">
+          <p class="img-caption">Outreach with the UC Santa Cruz Society of Physics Students.</p>
+        </div>
+
+        <p>As President of the <strong>UC Santa Cruz Society of Physics Students (SPS)</strong> since September 2023, I have tried to make physics feel like something that belongs to everyone. I led the university-wide research showcase connecting undergraduates with physics and astronomy faculty. I hosted graduate school and REU workshops to demystify what comes after a bachelor's degree. I raised over $5,500 in funding and led outreach events for community college and middle school students.</p>
+
+        <p>I have given public talks under the "No Jargon" format at UC Santa Cruz, including one called <em>Galactic Rain and the Death of Galaxies</em> and another called <em>A More Accurate Period for Variable Stars</em>, both designed to make active research accessible to audiences with no background in astrophysics. I have also spoken at Foothill High School in Pleasanton about galaxy evolution, and at the Leadership Alliance National Symposium, reaching audiences far beyond the university.</p>
+
+        <p>I believe that every talk given outside a conference room is a small act of democratization. The discoveries that happen in universities belong to the public that funds them and the world that they are about. Getting those discoveries out of the seminar room and into ordinary conversation is work I find genuinely urgent.</p>
+      </div>
+
+      <div class="fig-pair">
+        <div class="fig-item">
+          <img src="images/replace.png" alt="Public talk or SPS event">
+          <p class="img-caption">Presenting at a public outreach event.</p>
+        </div>
+        <div class="fig-item">
+          <img src="images/replace.png" alt="Community outreach">
+          <p class="img-caption">Physics outreach with middle school students.</p>
+        </div>
+      </div>
+
+
+      <!-- ════════════════════════════════════
+           Closing
+           ════════════════════════════════════ -->
+      <hr class="accent" />
+
+      <div class="pull-quote" style="font-size: 1.08em; margin-bottom: 2em;">
+        We were always just guests on this planet. The least we can do, while we are here, is make sure that the knowledge we gather about it, and about everything beyond it, reaches as many of those guests as possible.
+        <cite>Arian Moghni</cite>
+      </div>
+
+      <hr />
+
+    </div>
+  </div>
+
+  <footer id="footer">
+    <div class="inner">
+      <ul class="icons">
+        <li>
+          <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#109;&#111;&#103;&#104;&#110;&#105;&#64;&#117;&#99;&#115;&#99;&#46;&#101;&#100;&#117;" class="icon">
+            <i class="fas fa-envelope fa-3x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/nasa_farsi_ir/" target="_blank" class="icon">
+            <i class="fab fa-instagram fa-3x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://ui.adsabs.harvard.edu/search/q=author%3A(%22moghni%2C%20arian%22)&sort=date%20desc%2C%20bibcode%20desc&p_=0" class="icon">
+            <i class="ai ai-ads ai-3x"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://arxiv.org/abs/2604.13195" class="icon">
+            <i class="ai ai-arxiv ai-3x"></i>
+          </a>
+        </li>
+      </ul>
+      <ul class="copyright">
+        <li>&copy; Arian Moghni, May 2026. All rights reserved.</li>
+        <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</div>
+
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
 </html>
