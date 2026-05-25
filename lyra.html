@@ -74,56 +74,50 @@
       font-size: 0.75em; opacity: 0.6; margin-top: 0.4em;
     }
 
-    /* ── Figure layouts ───────────────────────────────────────── */
-
-    /* Two figures side by side */
-    .figures-row {
+    /* ── Research body: text + figure side by side ───────────── */
+    .research-body {
       display: flex;
-      gap: 1.5em;
-      margin: 1.5em 0;
+      gap: 2em;
       align-items: flex-start;
+      margin: 1.2em 0;
     }
-    .figures-row .fig {
-      flex: 1;
+    .research-body .text-col {
+      flex: 1 1 0;
       min-width: 0;
     }
-    .figures-row .fig img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .figures-row .fig .img-caption {
-      font-size: 0.72em; opacity: 0.65;
-      margin-top: 0.5em; line-height: 1.5;
-      max-width: 100%;
-    }
+    .research-body .text-col p { margin-top: 0; }
 
-    /* Single figure floated left */
-    .fig-left {
-      float: left;
-      margin: 0.3em 1.8em 1em 0;
-      max-width: 320px;
+    /* single figure on the right */
+    .research-body .fig-col {
+      flex: 0 0 280px;
+      width: 280px;
     }
-    .fig-left img {
+    /* two figures stacked on the right */
+    .research-body .figs-col {
+      flex: 0 0 280px;
+      width: 280px;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2em;
+    }
+    .research-body .fig-col img,
+    .research-body .figs-col img {
       width: 100%;
       height: auto;
       display: block;
     }
-    .fig-left .img-caption {
+    .img-caption {
       font-size: 0.72em; opacity: 0.65;
       margin-top: 0.4em; line-height: 1.5;
     }
-    .clearfix::after {
-      content: ""; display: table; clear: both;
-    }
 
-    /* Placeholder styling (for sections without images yet) */
+    /* Placeholder for missing images */
     .img-placeholder {
       border: 2px dashed rgba(144,144,144,0.3);
       display: flex; align-items: center; justify-content: center;
       flex-direction: column; gap: 6px;
-      font-size: 0.75em; opacity: 0.55;
-      aspect-ratio: 16/9;
+      font-size: 0.72em; opacity: 0.55;
+      aspect-ratio: 4/3; width: 100%;
     }
 
     .paper-links { margin-top: 1.2em; }
@@ -175,9 +169,10 @@
       margin: 2.5em 0 1.5em;
     }
 
-    @media (max-width: 640px) {
-      .figures-row { flex-direction: column; }
-      .fig-left { float: none; max-width: 100%; margin: 1em 0; }
+    @media (max-width: 700px) {
+      .research-body { flex-direction: column; }
+      .research-body .fig-col,
+      .research-body .figs-col { width: 100%; flex: none; }
     }
   </style>
 </head>
@@ -217,7 +212,7 @@
 
       <h1>Research</h1>
 
-      <!-- AAS press conference photo — centered, full size -->
+      <!-- AAS hero photo — centered, full size -->
       <div class="hero-photo-section">
         <img src="images/AAS247_PM_1162 2.jpg"
              alt="Arian Moghni at the AAS press conference"
@@ -259,38 +254,37 @@
         </div>
       </div>
 
-      <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, crucially, how they <em>stay</em> quiet for billions of years — even when they still contain gas that could, in principle, fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) that exhibit large-scale but weak, bi-symmetric ionized gas outflows — interpreted as signatures of ongoing, low-level active galactic nucleus (AGN) feedback. But what fuels the AGN in the first place?</p>
+      <!-- Text + two figures side by side -->
+      <div class="research-body">
+        <div class="text-col">
+          <p>One of the central puzzles in modern astronomy is understanding why some galaxies stop forming stars and, more importantly, how they <em>stay</em> quiet for billions of years, even when they still contain gas that could fuel new stars. <strong>Red geysers</strong> are a rare class of massive quiescent galaxies (log[M/M<sub>&#9737;</sub>] &asymp; 10.5) with large-scale, weak, bi-symmetric ionized gas outflows, interpreted as signatures of ongoing low-level AGN feedback. But what fuels the AGN in the first place?</p>
 
-      <p>I led an investigation into the mechanisms of quiescence by studying the cool and warm interstellar gas — traced by Na&thinsp;I&thinsp;D and Ca&thinsp;II absorption — in 140 red geyser galaxies at z&thinsp;&sim;&thinsp;0.04. Using spatially resolved spectra from the Sloan Digital Sky Survey-IV <a href="https://www.sdss.org/surveys/manga/" target="_blank">Mapping Nearby Galaxies at APO (MaNGA)</a> survey, I fitted double-Gaussian profiles to the Na&thinsp;I&thinsp;D doublet across each galaxy to measure spatially resolved velocities and velocity dispersions — revealing whether the gas is flowing in or out.</p>
+          <p>I led an investigation into the mechanisms of quiescence by mapping the cool and warm interstellar gas (traced by Na&thinsp;I&thinsp;D and Ca&thinsp;II absorption) in 140 red geyser galaxies at z&thinsp;&sim;&thinsp;0.04. Using spatially resolved spectra from the SDSS-IV <a href="https://www.sdss.org/surveys/manga/" target="_blank">MaNGA</a> survey, I fitted double-Gaussian profiles to the Na&thinsp;I&thinsp;D doublet to measure spatially resolved velocities and velocity dispersions, revealing whether gas is flowing in or out.</p>
 
-      <div class="key-finding">
-        <p>"These galaxy-scale winds are thought to be signatures of supermassive black hole activity in the center. The puzzle is how these black holes get their fuel."</p>
-        <cite>&mdash; Arian Moghni, UCSC press release, January 2026</cite>
-      </div>
+          <p>About 70% of the cool gas shows inflow signatures, with a median velocity of ~47 km/s, roughly 10% of the expected free-fall speed. This slow, organized infall suggests a continuous drizzle of cool clouds raining toward the galactic center to feed the supermassive black hole.</p>
 
-      <p>Contrary to the outflowing picture commonly seen in star-forming galaxies, roughly 70% of the cool gas in red geysers shows signatures of <em>inflow</em>, with a median velocity of ~47 km/s — about 10% of the expected free-fall speed. This slow, organized infall points to a continuous drizzle of cool clouds raining down toward the galactic center, where they can feed the supermassive black hole.</p>
+          <p>Red geysers interacting with nearby companions, or showing signs of past minor mergers, have inflowing gas reservoirs about 2.7 times larger than isolated systems. Red geysers detected in radio, a sign of an active central black hole, have inflow reservoirs nearly 7 times larger than radio-quiet ones.</p>
 
-      <p>A particularly striking result involves the role of the galaxy environment. Red geysers that show evidence of interactions with nearby companions, or signatures of past minor mergers, host inflowing gas reservoirs roughly 2.7 times larger than isolated systems. Meanwhile, the ~30% of red geysers detected in radio — a sign of active central black holes — have inflow reservoirs nearly 7 times larger than their radio-quiet counterparts.</p>
+          <p>These results support a self-regulating cycle: galaxy interactions deliver cool gas, which rains inward and feeds the AGN; the AGN heats the surrounding gas; star formation stays suppressed. Quiescence is not a one-time event but an actively maintained state. This work produced two first-author papers (one in prep.) and a Best Undergraduate Research Poster award at the APS regional meeting. I was 1 of 32 researchers from over 2,900 attendees invited to the 247th AAS Press Conference in January 2026.</p>
 
-      <p>Together, these findings support a self-regulating cycle: galaxy interactions deliver fresh cool gas, which rains inward and feeds the AGN; the AGN heats and stirs the surrounding gas; star formation remains suppressed; and the galaxy stays "red and dead." Rather than a one-time shutoff, quiescence appears to be an active, continuously maintained state. This work resulted in two first-author papers (one in preparation) and a Best Undergraduate Research Poster award at the annual APS regional meeting. I was also 1 of 32 researchers — from over 2,900 attendees — invited to present at the 247th AAS Press Conference in January 2026.</p>
-
-      <!-- Two figures side by side -->
-      <div class="figures-row">
-        <div class="fig">
-          <img src="images/four_galaxies.png" alt="Red geyser examples">
-          <p class="img-caption"><strong>Red Geysers Example.</strong> DESI Legacy Survey images (left) and zoomed-in MaNGA H&alpha; equivalent width maps (right) for four red geyser galaxies. From top to bottom: clear interaction, disturbed without a companion, undisturbed with a companion, and isolated. The cyan hexagon outlines the MaNGA footprint.</p>
+          <div class="paper-links">
+            <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae5f90" target="_blank">The Astrophysical Journal</a>
+            <a href="https://news.ucsc.edu/2026/01/red-geyser-galaxies/" target="_blank">UCSC Press Release</a>
+            <a href="https://www.universetoday.com/articles/red-geyser-galaxies-have-plenty-of-star-forming-gas-but-dont-form-stars" target="_blank">Universe Today</a>
+            <a href="https://interestingengineering.com/space/red-geysers-explain-galaxies-shut-star-formation" target="_blank">Interesting Engineering</a>
+          </div>
         </div>
-        <div class="fig">
-          <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
-          <p class="img-caption"><strong>Proposed feedback cycle.</strong> Galaxy interactions supply cool gas clouds (panels 1&ndash;2). The gas drifts inward and fuels the central AGN (panel 3). Black hole feedback heats surrounding gas (panel 4), suppressing star formation and sustaining quiescence over billions of years (panel 5).</p>
-        </div>
-      </div>
 
-      <div class="paper-links">
-        <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae5f90" target="_blank">The Astrophysical Journal</a>
-        <a href="https://news.ucsc.edu/2026/01/red-geyser-galaxies/" target="_blank">UCSC Press Release</a>
-        <a href="https://www.universetoday.com/articles/red-geyser-galaxies-have-plenty-of-star-forming-gas-but-dont-form-stars" target="_blank">Universe Today</a>
-        <a href="https://interestingengineering.com/space/red-geysers-explain-galaxies-shut-star-formation" target="_blank">Interesting Engineering</a>
+        <div class="figs-col">
+          <div>
+            <img src="images/four_galaxies.png" alt="Red geyser examples">
+            <p class="img-caption"><strong>Red Geyser Examples.</strong> DESI Legacy Survey images and MaNGA H&alpha; EW maps for four red geysers, classified by environment: interacting, disturbed, undisturbed with companion, and isolated. The cyan hexagon marks the MaNGA footprint.</p>
+          </div>
+          <div>
+            <img src="images/Red_geyser_summary.png" alt="Proposed feedback cycle">
+            <p class="img-caption"><strong>Feedback cycle.</strong> Interactions supply cool gas (1-2), which rains inward to fuel the AGN (3). Black hole feedback heats surrounding gas (4), keeping the galaxy quiescent (5).</p>
+          </div>
+        </div>
       </div>
 
       <div class="mentors-section">
@@ -342,9 +336,14 @@
         <span class="kw">Peer Mentorship</span>
       </div>
 
-      <p>In this project I served as peer mentor to a team of four first-year astrophysics undergraduates, guiding them through the process of applying rigorous statistical tools to real observational data from the Hubble Space Telescope (HST) and the James Webb Space Telescope (JWST).</p>
+      <div class="research-body">
+        <div class="text-col">
+          <p>I served as peer mentor to a team of four first-year astrophysics undergraduates, guiding them through applying statistical tools to real observational data from the Hubble Space Telescope (HST) and the James Webb Space Telescope (JWST).</p>
 
-      <p>A persistent challenge in observational spectroscopy is determining whether a spectral feature — an emission or absorption line — is genuinely present in the data or is merely a noise fluctuation. I developed and implemented Gaussian fitting routines and &chi;<sup>2</sup> tests to assess the statistical significance of spectral features in noisy HST and JWST spectra, and taught the team to apply these methods to their own datasets. The project gave the students hands-on experience with the full pipeline from raw spectra to quantitative confidence statements — skills directly transferable to any spectroscopic analysis.</p>
+          <p>A key challenge in spectroscopy is deciding whether a spectral feature is a real signal or just noise. I developed Gaussian fitting routines and chi-squared tests to assess the statistical significance of emission and absorption lines in noisy HST and JWST spectra, and taught the team to apply these methods to their own datasets. Students gained hands-on experience going from raw spectra to quantitative confidence statements.</p>
+        </div>
+        <!-- No figure for this section, text-col takes full width naturally -->
+      </div>
 
       <div class="mentors-section">
         <span class="mentors-label">Primary Mentor</span>
@@ -373,14 +372,15 @@
         <span class="kw">Order-of-Magnitude Calculations</span>
       </div>
 
-      <p>Hot Jupiters — gas giant exoplanets on very close-in orbits — are subjected to intense irradiation from their host stars, driving hydrodynamic atmospheric escape that may form a diffuse plasma torus along the planet's orbital path. Detecting this torus would provide a direct window into atmospheric mass-loss rates and the long-term fate of close-in planets.</p>
+      <div class="research-body">
+        <div class="text-col">
+          <p>Hot Jupiters are gas giant exoplanets on very close-in orbits. They receive intense radiation from their host stars, which can drive atmospheric escape and may form a diffuse plasma torus along the planet's orbital path. Detecting this torus would give a direct measurement of atmospheric mass-loss rates.</p>
 
-      <p>I built a forward model to predict the detectability of this proposed torus as a function of system properties: stellar mass and radius, gas temperature, orbital distance, and ionizing flux. The model simulates the expected observed spectra — including the resulting absorption lines — and returns the probability that a torus would be detectable for any given set of parameters. In practice, the model serves as a targeting tool: it can rank candidate Hot Jupiter systems by the likelihood of a torus detection, focusing future telescope time on the most promising targets and maximizing the chances of a discovery. Findings were presented at the UC Santa Cruz ASTR 9 Research Symposium.</p>
+          <p>I built a forward model to predict whether this torus could be detected, as a function of stellar mass, stellar radius, gas temperature, orbital distance, and ionizing flux. The model simulates expected spectra and the resulting absorption lines, and outputs the probability of a torus detection for any given system. It can rank candidate Hot Jupiter systems by detectability, helping focus telescope time on the most promising targets. Findings were presented at the UC Santa Cruz ASTR 9 Research Symposium.</p>
+        </div>
 
-      <!-- Single figure, floated left -->
-      <div class="clearfix">
-        <div class="fig-left">
-          <div class="img-placeholder" style="width:100%; aspect-ratio:4/3;">
+        <div class="fig-col">
+          <div class="img-placeholder">
             <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.4" viewBox="0 0 24 24">
               <rect x="3" y="3" width="18" height="18" rx="2"/>
               <circle cx="8.5" cy="8.5" r="1.5"/>
@@ -388,27 +388,27 @@
             </svg>
             <span>e.g. images/exo_atm.png</span>
           </div>
-          <p class="img-caption">Placeholder &mdash; add a figure from your torus modeling work here.</p>
+          <p class="img-caption">Placeholder — add a figure from your torus modeling work here.</p>
         </div>
+      </div>
 
-        <div class="mentors-section">
-          <span class="mentors-label">Advisors</span>
-          <div class="mentors-row">
-            <a href="https://orcid.org/0000-0001-5061-0462" target="_blank" class="mentor-card">
-              <div class="mentor-avatar"><img src="images/rmc_pic.jpg" alt="Ruth Murray-Clay"></div>
-              <div>
-                <div class="mentor-name">Prof. Ruth Murray-Clay</div>
-                <div class="mentor-role">UC Santa Cruz &middot; Planetary Astrophysics</div>
-              </div>
-            </a>
-            <a href="https://orcid.org/0000-0003-2872-760X" target="_blank" class="mentor-card">
-              <div class="mentor-avatar"><img src="images/Ethan_Sc2_cropped.jpg" alt="Ethan Schreyer"></div>
-              <div>
-                <div class="mentor-name">Dr. Ethan Schreyer</div>
-                <div class="mentor-role">UC Santa Cruz</div>
-              </div>
-            </a>
-          </div>
+      <div class="mentors-section">
+        <span class="mentors-label">Advisors</span>
+        <div class="mentors-row">
+          <a href="https://orcid.org/0000-0001-5061-0462" target="_blank" class="mentor-card">
+            <div class="mentor-avatar"><img src="images/rmc_pic.jpg" alt="Ruth Murray-Clay"></div>
+            <div>
+              <div class="mentor-name">Prof. Ruth Murray-Clay</div>
+              <div class="mentor-role">UC Santa Cruz &middot; Planetary Astrophysics</div>
+            </div>
+          </a>
+          <a href="https://orcid.org/0000-0003-2872-760X" target="_blank" class="mentor-card">
+            <div class="mentor-avatar"><img src="images/Ethan_Sc2_cropped.jpg" alt="Ethan Schreyer"></div>
+            <div>
+              <div class="mentor-name">Dr. Ethan Schreyer</div>
+              <div class="mentor-role">UC Santa Cruz</div>
+            </div>
+          </a>
         </div>
       </div>
 
@@ -423,48 +423,45 @@
       <div class="keyword-strip">
         <span class="kw">Photometry</span>
         <span class="kw">Variable Stars</span>
-        <span class="kw">Lomb&ndash;Scargle Periodogram</span>
+        <span class="kw">Lomb-Scargle Periodogram</span>
       </div>
 
-      <p>RR Lyrae are low-mass horizontal branch stars that undergo regular pulsations, giving them a characteristic light curve shape and a tight, shallow period&ndash;luminosity relation in the <em>i</em>-filter. These properties make them excellent standard candles and powerful tracers of Galactic structure and merger history. Accurate period determination is central to exploiting them — but how precisely can we pin down a period, and what controls that precision?</p>
+      <div class="research-body">
+        <div class="text-col">
+          <p>RR Lyrae are pulsating stars with a well-defined light curve shape and a tight period-luminosity relation in the <em>i</em>-band. This makes them excellent standard candles and tracers of Galactic structure. Precise period determination is essential for using them, so understanding what controls that precision matters.</p>
 
-      <p>Working with Prof. Raja GuhaThakurta at UC Santa Cruz through the <a href="https://sip.ucsc.edu" target="_blank">Science Internship Program (SIP)</a> — awarded to the top 9% of applicants — I searched for new RR Lyrae stars in the Canada&ndash;France&ndash;Hawaii Telescope Legacy Survey (CFHTLS) using both the Lomb&ndash;Scargle periodogram and the Phase Distance Correlation method. I also tested a new heuristic formula that predicts the full width at half maximum (FWHM) of the peak in the Generalized Lomb&ndash;Scargle (GLS) periodogram of a periodic variable. The formula relates the peak width to five parameters: the star's period, the amplitude and slope of its light curve, the photometric precision of the measurements, the number of measurements, and the time baseline over which they were taken.</p>
+          <p>Through the <a href="https://sip.ucsc.edu" target="_blank">Science Internship Program (SIP)</a> at UC Santa Cruz (top 9% of applicants), I searched for new RR Lyrae in the Canada-France-Hawaii Telescope Legacy Survey (CFHTLS) using the Lomb-Scargle periodogram and the Phase Distance Correlation method. I also tested a heuristic formula that predicts the FWHM of the Generalized Lomb-Scargle periodogram peak. The formula depends on five parameters: the star's period, light curve amplitude and slope, photometric precision, number of measurements, and time baseline.</p>
 
-      <div class="key-finding">
-        <p>How finely must you search for a period? The answer depends on how you observed — and on the shape of the light curve itself. A validated formula now provides a principled answer for any time-domain survey.</p>
-      </div>
+          <p>Using six-filter photometry from the CFHTLS Deep Fields over nearly a decade, I validated the formula across a wide parameter range. It tells observers how finely to sample period space when searching for RR Lyrae, and applies to any time-domain survey including the upcoming <em>Vera C. Rubin Observatory / LSST</em>.</p>
 
-      <p>To test the formula empirically, we used time-series photometry in six filters (<em>u, g, r, i</em>1, <em>i</em>2, <em>z</em>) from the CFHTLS Deep Fields, imaging four 1&thinsp;deg&sup2; fields with the CFHT 3.6-m telescope and MegaCam over nearly a decade. These empirical tests validate the heuristic formula across a wide range of parameter space. The formula tells observers how finely they need to sample period space when searching for RR Lyrae, and is broadly applicable to periodic variables in any time-domain survey — including the forthcoming <em>Vera C. Rubin Observatory's Legacy Survey of Space and Time (LSST)</em>.</p>
+          <div class="paper-links">
+            <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5q95jRYAAAAJ&citation_for_view=5q95jRYAAAAJ:u-x6o8ySG0sC" target="_blank">Google Scholar</a>
+          </div>
+        </div>
 
-      <!-- Single figure, floated left -->
-      <div class="clearfix">
-        <div class="fig-left">
+        <div class="fig-col">
           <img src="images/enhanced_sip.png" alt="Periodogram peak width vs time baseline">
           <p class="img-caption">Periodogram peak width as a function of time baseline.</p>
         </div>
+      </div>
 
-        <div class="paper-links">
-          <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=5q95jRYAAAAJ&citation_for_view=5q95jRYAAAAJ:u-x6o8ySG0sC" target="_blank">Google Scholar</a>
-        </div>
-
-        <div class="mentors-section">
-          <span class="mentors-label">Advisor</span>
-          <div class="mentors-row">
-            <a href="https://www.ucolick.org/~raja/" target="_blank" class="mentor-card">
-              <div class="mentor-avatar"><img src="images/raja-guhathakurta-300-1.jpg" alt="Raja GuhaThakurta"></div>
-              <div>
-                <div class="mentor-name">Prof. Raja GuhaThakurta</div>
-                <div class="mentor-role">UC Santa Cruz</div>
-              </div>
-            </a>
-          </div>
+      <div class="mentors-section">
+        <span class="mentors-label">Advisor</span>
+        <div class="mentors-row">
+          <a href="https://www.ucolick.org/~raja/" target="_blank" class="mentor-card">
+            <div class="mentor-avatar"><img src="images/raja-guhathakurta-300-1.jpg" alt="Raja GuhaThakurta"></div>
+            <div>
+              <div class="mentor-name">Prof. Raja GuhaThakurta</div>
+              <div class="mentor-role">UC Santa Cruz</div>
+            </div>
+          </a>
         </div>
       </div>
 
       <hr />
 
-    </div><!-- /.inner -->
-  </div><!-- /#main -->
+    </div>
+  </div>
 
   <footer id="footer">
     <div class="inner">
@@ -492,7 +489,7 @@
     </div>
   </footer>
 
-</div><!-- /#wrapper -->
+</div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/browser.min.js"></script>
