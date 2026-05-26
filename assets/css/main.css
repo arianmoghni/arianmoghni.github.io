@@ -2592,9 +2592,8 @@ input, select, textarea {
 	}
 
 	#main .tiles article .image img {
-    width: 100%;
+    width: 50vw;
     height: auto;
-    display: block;
 }
 
 		.tiles article {
