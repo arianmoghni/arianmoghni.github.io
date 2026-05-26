@@ -2589,7 +2589,7 @@ input, select, textarea {
 	#main .tiles {
     display: grid;
     grid-template-columns: repeat(2, 1fr) !important;
-	grid-template-rows: repeat(2, 30vw) !important; 
+	grid-template-rows: repeat(2, 100vw) !important; 
 }
 
 		.tiles article {
