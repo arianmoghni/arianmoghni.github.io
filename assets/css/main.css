@@ -2586,14 +2586,14 @@ input, select, textarea {
 		margin: -2.5em 0 0 -2.5em;
 	}
 
-	#main .tiles {
+	#main .inner {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
+
+#main .tiles {
     display: grid;
     grid-template-columns: repeat(2, 1fr) !important;
-	}
-
-	#main .tiles article .image img {
-    width: 50vw;
-    height: auto;
 }
 
 		.tiles article {
