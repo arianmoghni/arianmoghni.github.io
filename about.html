@@ -110,9 +110,33 @@
 <div id="main">
   <div class="inner">
     <h1>About</h1>
-    <p style="text-align: center;">
-      <img src="images/Lick_img_3-2.jpg" alt="" style="width: 100%; height: auto;" />
-    </p>
+    <style>
+.about-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5em;
+  margin: 2em 0;
+  align-items: start;
+}
+
+.about-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 736px) {
+  .about-images {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
+
+<div class="about-images">
+  <img src="images/Lick_img_3-2.jpg" alt="Lick Observatory" />
+  <img src="images/Aurora_Lick.jpg" alt="Aurora at Lick Observatory" />
+</div>
 
 	  
     <p>
@@ -120,9 +144,7 @@
     </p>
 
 	<p>
-  <span class="image center">
-    <img src="images/Aurora_Lick.jpg" alt="" style="width: 80%; height: auto;"/>
-  </span>
+ 
 </p>
 
     <div class="quick-facts">
