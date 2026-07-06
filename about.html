@@ -36,32 +36,35 @@
         margin: 0;
         padding: 0;
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 0.9em 2.5em;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.4em 2em;
       }
       .quick-facts li {
         display: flex;
-        justify-content: space-between;
-        align-items: baseline;
-        gap: 1em;
+        flex-direction: column;
+        gap: 0.25em;
         border-bottom: 1px dashed rgba(0, 0, 0, 0.15);
-        padding-bottom: 0.5em;
+        padding-bottom: 0.6em;
+        min-width: 0;
       }
       .quick-facts .fact-label {
-        font-size: 0.78em;
+        font-size: 0.75em;
         text-transform: uppercase;
         letter-spacing: 0.5px;
         color: #888;
-        white-space: nowrap;
       }
       .quick-facts .fact-value {
         font-family: "Courier New", Courier, monospace;
         font-weight: 600;
-        text-align: right;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+      }
+      @media screen and (max-width: 736px) {
+        .quick-facts ul { grid-template-columns: repeat(2, 1fr); }
       }
       @media screen and (max-width: 480px) {
         .quick-facts { padding: 1.25em 1.25em; }
-        .quick-facts ul { grid-template-columns: 1fr; gap: 0.75em; }
+        .quick-facts ul { grid-template-columns: 1fr; gap: 0.9em; }
       }
     </style>
   </head>
@@ -137,13 +140,16 @@
         <li><span class="fact-label">Studying</span><span class="fact-value">Astrophysics, UCSC</span></li>
         <li><span class="fact-label">Languages</span><span class="fact-value">Farsi, English</span></li>
         <li><span class="fact-label">Zodiac sign</span><span class="fact-value">Gemini</span></li>
-        <li><span class="fact-label">Coffee or tea</span><span class="fact-value">Coffee, always</span></li>
+        <li><span class="fact-label">Would survive a zombie apocalypse?</span><span class="fact-value">For about a day</span></li>
+        <li><span class="fact-label">Last text sent</span><span class="fact-value">"on my way"</span></li>
         <li><span class="fact-label">Go-to snack</span><span class="fact-value">Pistachios</span></li>
         <li><span class="fact-label">Comfort food</span><span class="fact-value">Ghormeh sabzi</span></li>
         <li><span class="fact-label">First job</span><span class="fact-value">Ice cream scooper</span></li>
+        <li><span class="fact-label">Worst haircut era</span><span class="fact-value">Age 12, don't ask</span></li>
         <li><span class="fact-label">Instrument played</span><span class="fact-value">Guitar (badly)</span></li>
         <li><span class="fact-label">Currently reading</span><span class="fact-value">Cosmos — Carl Sagan</span></li>
         <li><span class="fact-label">Currently watching</span><span class="fact-value">Whatever's trending</span></li>
+        <li><span class="fact-label">Most-rewatched movie</span><span class="fact-value">The Martian</span></li>
         <li><span class="fact-label">Outside the lab</span><span class="fact-value">Hiking, photography</span></li>
         <li><span class="fact-label">Weekend ritual</span><span class="fact-value">Farmers market run</span></li>
         <li><span class="fact-label">Role models</span><span class="fact-value">My grandmother</span></li>
@@ -153,9 +159,15 @@
         <li><span class="fact-label">Guilty pleasure</span><span class="fact-value">Reality TV</span></li>
         <li><span class="fact-label">Dream trip</span><span class="fact-value">Patagonia</span></li>
         <li><span class="fact-label">Superpower of choice</span><span class="fact-value">Teleportation</span></li>
-        <li><span class="fact-label">Fun fact</span><span class="fact-value">Can solve a Rubik's cube in under a minute</span></li>
+        <li><span class="fact-label">If I weren't doing this</span><span class="fact-value">Chef, probably</span></li>
+        <li><span class="fact-label">Fictional character I relate to</span><span class="fact-value">Ferris Bueller</span></li>
+        <li><span class="fact-label">Can't function without</span><span class="fact-value">Good playlist</span></li>
+        <li><span class="fact-label">Unpopular opinion</span><span class="fact-value">Pineapple belongs on pizza</span></li>
+        <li><span class="fact-label">Currently procrastinating on</span><span class="fact-value">This website</span></li>
         <li><span class="fact-label">Morning or night person</span><span class="fact-value">Night, unfortunately</span></li>
         <li><span class="fact-label">Karaoke song</span><span class="fact-value">Anything Persian pop</span></li>
+        <li><span class="fact-label">One-word self-description</span><span class="fact-value">Curious</span></li>
+        <li><span class="fact-label">Most-used app</span><span class="fact-value">Whatever has a red notification badge</span></li>
       </ul>
     </div>
 
